@@ -1,0 +1,14 @@
+.title-list {
+    text-align: left;
+    height: 40px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #CCC;    
+}
+.title-list h2 {
+    font-family: 'Roboto Condensed',Tahoma,sans-serif;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    max-width: max-content;    
+    border-bottom: 1px solid #4E4E4E;
+}

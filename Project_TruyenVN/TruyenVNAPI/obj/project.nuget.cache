@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qUSN9kY6G408ishPiI7pVsS/Lh0wP0q/AJLMrA+UYZ9hrYI1sMCp4jHT9NrkxX4qxYnkOxX+WJGYTfzAVDCWIg==",
+  "dgSpecHash": "IejpPeEhbmx3MUUAHZAYMgqa/r75Qod02oKzq4WsP1B+4G0RI0P8XJ6RfmbZc6RgeIn1CdeitBSrLFNA7/AK3w==",
   "success": true,
-  "projectFilePath": "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj",
+  "projectFilePath": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

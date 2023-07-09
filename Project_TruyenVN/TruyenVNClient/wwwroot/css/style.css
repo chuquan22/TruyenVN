@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed',sans-serif;
+    background-color: #EEEEEE;
+}
+.navbar {
+    background-color: #14425D;
+    color: #FFF;
+}
+.container {  
+    padding: 0 15px;
+    width: 1140px;    
+    margin: 0 auto;
+    display: flex;    
+}
+.nav-header {
+    display: flex;
+    align-items: center;
+}
+.header-logo {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+.nav-control {
+    display: flex;
+    list-style-type: none;
+    flex-grow: 1;
+    margin: 0;
+}
+.nav-control li {
+    height: 100%;
+    padding: 15px 8px;
+    position: relative;
+    box-sizing: border-box;
+}
+.nav-control .fas {
+    padding-right: 5px;
+}
+.nav-search {
+    margin: 8px 0;
+    padding: 0 15px;
+}
+input[type=search] {
+    height: 100%;
+    border: none;
+    padding: 0 10px;
+}
+input[type=search]:focus {
+    border: none;
+}
+#search-btn {
+    height: 100%;
+    width: 30px;
+    background-color: #FFF;
+    border: none;
+}
+#input-form:active {
+    border: none;
+}
+#search-btn:hover {
+    background-color: #DDD;
+}
+.description { 
+    padding: 8px 0;
+    font-size: 14px;
+    color: #555;
+    background-color: #ECECEC;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.3);
+}
+.description .content {
+    padding: 0 15px;
+    width: 1140px;    
+    margin: 0 auto;
+}
+.nav-control li:hover {
+    background-color: #2F566D;
+}
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    width: max-content;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #14425D;
+    z-index: 1;
+}
+.dropdown-menu li {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.nav-control li:hover .dropdown-menu {
+    display: block;
+    background-color: #2F566D;
+}
+.dropdown-menu li:hover {
+    background-color: #14425D;
+}
+#setting {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 150px;
+    padding: 20px 20px 30px 40px;
+    display: none;
+    background-color: #14425D;
+}
+.nav-control li:hover #setting {
+    display: block;
+    background-color: #2F566D;
+}
+.footer {
+    border-top: 1px solid #DDD;
+    background-color: #F8F8F8;  
+    margin-top: 10px;  
+    color: #4E4E4E;
+    font-size: 13px;
+}
+.footer .container {
+    display: flex;
+    width: 1140px;
+    height: fit-content;
+    margin: 0 auto;
+    padding-top: 15px;    
+}
+.footer .container .introduce {
+    width: 1000px;
+    padding: 0 15px;    
+}
+.footer .container .genre-list {
+    flex-grow: 1;
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+.footer .container .genre-list .tag {
+    display: inline-block;
+    background-color: #EEE;
+    border: 1px solid #DDD;
+    margin: 2px 2px 2px 0;
+    padding: 2px 5px;
+}
+.title-list {
+    text-align: left;    
+    text-transform: uppercase;
+    border-bottom: 1px solid #CCC;    
+    margin-top: 40px;
+}
+.title-list h2 {  
+    margin: 0;  
+    font-family: 'Roboto Condensed',sans-serif;
+    font-size: 20px;
+    color: #4E4E4E;
+    height: 40px;
+    line-height: 39px;
+    max-width: max-content;    
+    border-bottom: 1px solid #4E4E4E;
+    display: inline-block;
+}
+.hot-items-container {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.hot-item {
+    width: 129px;
+    height: 192px;    
+    margin: 12px 0 0 12px;
+    position: relative; 
+    text-transform: capitalize;
+}
+.hot-item .title {
+    position: absolute;
+    bottom: 0;    
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+    color: #FFF;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.top-item {
+    width: 265px;
+    height: 396px;
+    position: relative;    
+}
+.top-item .title {      
+    padding: 12px;    
+    color: #FFFC57;   
+    font-size: 18px;
+}
+.list-items {
+    display: flex;    
+    
+}
+.main-content {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+}
+.new-item {
+    display: flex;
+    border-bottom: 1px dashed #CCC;
+}
+.new-item a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+.new-item a:hover {
+    text-decoration: underline;
+}
+.new-item .col-3 a {
+    color: #31708f;
+}
+.new-item .col {
+    border-left: 1px dashed #CCC;
+    padding: 0 15px;
+    line-height: 40px;
+}
+.new-item .col-1 {
+    padding-right: 15px;
+    line-height: 40px;
+    flex-grow: 1;
+}
+.new-item .col-2 {
+    width: 170px;
+}
+.new-item .col-3 {
+    width: 140px;
+}
+.new-item .col-4 {
+    width: 90px;
+    font-size: 14px;
+}
+.new-item .fas {
+    color: #3c3a3a;
+    margin-right: 4px;
+}
+.new-items-container {
+    flex-grow: 1;
+}
+.genre-list-item {
+    width: 300px;
+    height: fit-content;
+    background-color: #ECF0F1;
+    padding: 0px 14px 14px 14px;
+    margin: 40px 0 0 15px;
+    border: 1px solid #DDD;
+}
+.genre-list-item .title-list {
+    margin-top: 0;
+}
+.items .row {
+    display: flex;    
+}
+.items .row div {
+    width: 50%;
+    padding-left: 30px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.genre-list-item a {
+    text-decoration: none;
+    color: #000;
+}
+.genre-list-item a:hover {
+    text-decoration: underline;
+}
+.new-select {    
+    float: right; 
+}
+.new-select select {
+    font-size: 20px;
+    color: #4E4E4E;   
+    border: 1px solid;
+    width: 157px;
+    height: 40px;
+    padding: 5px;
+    text-transform: uppercase; 
+    background-color: #EEE;      
+}
+.finished-items-container {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+}
+.fineshed-item {
+    width: 190px;
+    height: 295px; 
+    margin: 7px 0 15px 0;   
+}
+.fineshed-item a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.fineshed-item h3 {
+    height: 16px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin: 10px 0 5px 0;
+    overflow: hidden;
+}
+.label-btn {
+    display: inline-block;
+    background-color: #2A5893;
+    color: #FFF;
+    font-size: 12px;
+    padding: 3px 5px;
+    border-radius: 3px;
+}

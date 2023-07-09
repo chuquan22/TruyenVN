@@ -1,0 +1,19 @@
+.footer .container {
+    display: flex;
+    margin: 0 7%;
+    padding-top: 15px;
+}
+.footer .container .introduce {
+    width: 50%;
+    padding: 0 15px;
+}
+.footer .container .genre-list {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+.footer .container .genre-list .tag {
+    display: inline-block;
+    background-color: #EEE;
+    border: 1px solid #DDD;
+    margin: 2px;
+}

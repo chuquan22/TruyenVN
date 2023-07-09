@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj": {}
+    "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj": {}
   },
   "projects": {
-    "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj": {
+    "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj",
+        "projectUniqueName": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj",
         "projectName": "TruyenVNAPI",
-        "projectPath": "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj",
+        "projectPath": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVNAPI\\obj\\",
+        "outputPath": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj": {
-                "projectPath": "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj"
+              "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj": {
+                "projectPath": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj": {
+    "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj",
+        "projectUniqueName": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj",
         "projectName": "TruyenVN",
-        "projectPath": "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj",
+        "projectPath": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVN\\TruyenVN.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\FULearning\\Summer2023\\PRU221m\\Code\\Project_TruyenVN\\TruyenVN\\obj\\",
+        "outputPath": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVN\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",

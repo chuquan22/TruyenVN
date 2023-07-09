@@ -19,8 +19,7 @@ namespace TruyenVNAPI.Model
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [AllowNull]
-        [StringLength(50)]
-        public string Status { get; set; }
+        public bool isActive { get; set; }
         [Required]
         [DataType(DataType.Date)]
         public String DateOfBirth { get; set; }

@@ -3,48 +3,104 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TruyenVNClient</title>
+    <title>TruyenVN - Đọc truyện online, đọc truyện hay</title>
+    <script src="https://kit.fontawesome.com/3a5e19e6c3.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/finished-item.css" asp-append-version="true">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.8cache.com/favicon.ico">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TruyenVNClient.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">TruyenVNClient</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+    <div class="wrapper">
+        <div class="header">
+            <div class="navbar">
+                <div class="container">
+                    <div class="nav-header">
+                        <a href="#" title="doc truyen" class="header-logo">TRUYỆN VN</a>
+                    </div>
+                    <ul class="nav-control">
+                        <li class="dropdown">
+                            <i class="fas fa-list"></i>Danh sách
+                            <ul class="dropdown-menu">
+                                <li>Truyện mới cập nhật</li>
+                                <li>Truyện Hot</li>
+                                <li>Truyện Full</li>
+                                <li>Tiên Hiệp Hay</li>
+                                <li>Kiếm Hiệp Hay</li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        <li class="dropdown">
+                            <i class="fas fa-list"></i>Thể loại
+                            <ul class="dropdown-menu">
+                                <li>Tiên hiệp</li>
+                                <li>Kiếm Hiệp</li>
+                                <li>Ngôn Tình</li>
+                                <li>Đô Thị</li>
+                                <li>Quan Trường</li>
+                                <li>Võng Du</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <i class="fas fa-cog"></i>Tùy chỉnh
+                            <div id="setting">
+                                <label for="set-color">Màu nền</label>
+                                <select id="set-color">
+                                    <option value="gray">Xám nhạt</option>
+                                    <option value="dark">Màu tối</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light text-decoration-none">Truyện Tranh</a>
                         </li>
                     </ul>
+                    <div class="nav-search">
+                        <input type="search" placeholder="Tìm kiếm"><button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
+            <div class="description">
+                <div class="content">Đọc truyện online, đọc truyện chữ, truyện full, truyện hay. Tổng hợp đầy đủ và cập nhật liên tục.</div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <div class="footer">
         <div class="container">
-            &copy; 2023 - TruyenVNClient - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <div class="introduce">
+                <b>Truyện VN</b> - Đọc truyện online, đọc truyện chữ, truyện hay. Website luôn cập nhật những bộ truyện mới thuộc các thể loại đặc sắc như truyện tiên hiệp, truyện kiếm hiệp, hay truyện ngôn tình một cách nhanh nhất. Hỗ trợ mọi thiết bị như di động và máy tính bảng.
+            </div>
+            <div class="genre-list">
+                <div class="tag">đam mỹ hài</div>
+                <div class="tag">truyện xuyên nhanh</div>
+                <div class="tag">ngôn tình sủng</div>
+                <div class="tag">ngôn tình hài</div>
+                <div class="tag">truyện teen hay</div>
+                <div class="tag">ngôn tình hay</div>
+                <div class="tag">truyện đam mỹ</div>
+                <div class="tag">truyện ngôn tình</div>
+                <div class="tag">ngôn tình hoàn</div>
+                <div class="tag">ngôn tình ngược</div>
+                <div class="tag">truyện kiếm hiệp hay</div>
+                <div class="tag">truyện tiên hiệp hay</div>
+                <div class="tag">truyện hệ thống</div>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/loadGenreListItem.js asp-append-version="true"></script>
+    <script src="~/js/loadNewSelect.jssp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -14,7 +14,7 @@ namespace TruyenVNAPI.Model
         [Required] 
         public DateTime date_view { get; set; }
 
-        public virtual Chapter Chapter { get; set; }
-        public virtual User User { get; set; }
+        public virtual Chapter Chapters { get; set; }
+        public virtual User Users { get; set; }
     }
 }

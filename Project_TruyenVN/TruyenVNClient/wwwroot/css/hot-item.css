@@ -1,0 +1,18 @@
+.hot-item {
+    width: 129px;
+    height: 192px;
+    margin: -50px;
+    border: 2px solid black;
+}
+.hot-item .title {
+    position: relative;
+    bottom: 10%;
+    height: 10%;
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+    color: #FFF;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+}

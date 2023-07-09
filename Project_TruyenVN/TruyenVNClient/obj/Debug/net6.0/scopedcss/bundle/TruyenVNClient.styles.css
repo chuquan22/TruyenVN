@@ -1,0 +1,166 @@
+/* _content/TruyenVNClient/Pages/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+body[b-q6iblxh4qf] {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.navbar[b-q6iblxh4qf] {
+    background-color: #14425D;
+    color: #FFF;
+}
+
+    .navbar .container[b-q6iblxh4qf] {
+        margin: 0 7%;
+        padding: 0 15px;
+        height: 50px;
+        display: flex;
+    }
+
+.nav-header[b-q6iblxh4qf] {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo[b-q6iblxh4qf] {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.nav-control[b-q6iblxh4qf] {
+    display: flex;
+    list-style-type: none;
+    flex-grow: 1;
+    margin: 0;
+}
+
+    .nav-control li[b-q6iblxh4qf] {
+        height: 100%;
+        padding: 15px 8px;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .nav-control .fas[b-q6iblxh4qf] {
+        padding-right: 5px;
+    }
+
+.nav-search[b-q6iblxh4qf] {
+    margin: 8px 0;
+    padding: 0 15px;
+}
+
+#input-form[b-q6iblxh4qf] {
+    height: 100%;
+    border: none;
+    padding: 0 10px;
+}
+
+#search-btn[b-q6iblxh4qf] {
+    height: 100%;
+    width: 30px;
+    background-color: #FFF;
+    border: none;
+}
+
+    #search-btn:hover[b-q6iblxh4qf] {
+        background-color: #DDD;
+    }
+
+.description[b-q6iblxh4qf] {
+    padding: 8px 8%;
+    font-size: 15px;
+    color: #555;
+    background-color: #ECECEC;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+.nav-control li:hover[b-q6iblxh4qf] {
+    background-color: #2F566D;
+}
+
+.dropdown-menu[b-q6iblxh4qf] {
+    list-style: none;
+    padding: 0;
+    width: max-content;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #14425D;
+}
+
+    .dropdown-menu li[b-q6iblxh4qf] {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+.nav-control li:hover .dropdown-menu[b-q6iblxh4qf] {
+    display: block;
+    background-color: #2F566D;
+}
+
+.dropdown-menu li:hover[b-q6iblxh4qf] {
+    background-color: #14425D;
+}
+
+#setting[b-q6iblxh4qf] {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 150px;
+    padding: 20px 20px 30px 40px;
+    display: none;
+    background-color: #14425D;
+}
+
+.nav-control li:hover #setting[b-q6iblxh4qf] {
+    display: block;
+    background-color: #2F566D;
+}
+
+.border-top[b-q6iblxh4qf] {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom[b-q6iblxh4qf] {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-q6iblxh4qf] {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-q6iblxh4qf] {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer .container[b-q6iblxh4qf] {
+    display: flex;
+    margin: 0 7%;
+    padding-top: 15px;
+}
+
+    .footer .container .introduce[b-q6iblxh4qf] {
+        width: 50%;
+        padding: 0 15px;
+    }
+
+    .footer .container .genre-list[b-q6iblxh4qf] {
+        flex-grow: 1;
+        padding: 0 15px;
+    }
+
+        .footer .container .genre-list .tag[b-q6iblxh4qf] {
+            display: inline-block;
+            background-color: #EEE;
+            border: 1px solid #DDD;
+            margin: 2px;
+        }

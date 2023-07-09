@@ -12,3 +12,17 @@ D:\FULearning\Summer2023\PRU221m\Code\Project_TruyenVN\TruyenVN\obj\Debug\net6.0
 D:\FULearning\Summer2023\PRU221m\Code\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.pdb
 D:\FULearning\Summer2023\PRU221m\Code\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.genruntimeconfig.cache
 D:\FULearning\Summer2023\PRU221m\Code\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\ref\TruyenVN.dll
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\bin\Debug\net6.0\TruyenVN.deps.json
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\bin\Debug\net6.0\TruyenVN.runtimeconfig.json
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\bin\Debug\net6.0\TruyenVN.dll
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\bin\Debug\net6.0\TruyenVN.pdb
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.csproj.AssemblyReference.cache
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.GeneratedMSBuildEditorConfig.editorconfig
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.AssemblyInfoInputs.cache
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.AssemblyInfo.cs
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.csproj.CoreCompileInputs.cache
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.dll
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\refint\TruyenVN.dll
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.pdb
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\TruyenVN.genruntimeconfig.cache
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVN\obj\Debug\net6.0\ref\TruyenVN.dll
