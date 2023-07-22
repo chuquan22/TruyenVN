@@ -45,18 +45,15 @@
                         </div>
                         <div class="tile is-parent">
                             <div class="tile is-child">
-                                <a href="https://truyenqqq.vn/truyen-tranh/hoc-vien-anh-hung-380-chap-394.html">
+                                <a href="#">
                                     <div class="hero-item has-excerpt">
-                                        <img class="cover" src="https://i.truyenvua.com/slider/583x386/slider_1560573084.jpg?gt=hdfgdfg&mobile=2" alt="cover" />
+                                        <img class="cover" src="@Model.Top1Stories.story_image" alt="cover" />
                                         <div class="bottom-shadow"></div>
                                         <div class="captions">
-                                            <h5>Thể loại: Action, Adventure, Comedy, Shounen, Supernatural</h5>
-                                            <h3>Học Viện Anh Hùng</h3>
+                                            <h5>@Model.Top1Stories.description</h5>
+                                            <h3>@Model.Top1Stories.story_name</h3>
                                         </div>
                                         <div class="chapter violet">Chương 394</div>
-                                        <div class="excerpt">
-                                            Vào tương lai, lúc mà con người với những sức mạnh siêu nhiên là điều thường thấy quanh thế giới. Đây là câu chuyện về Izuku Midoriya, từ một kẻ bất tài trở thành một siêu anh hùng. Tất cả ta cần là mơ ước.
-                                        </div>
                                     </div>
                                     <!-- /.hero-item -->
                                 </a>
@@ -229,103 +226,44 @@
                     <div class="clear"></div>
                 </div>
                 <div class="list_grid_out">
-                    <ul class="list_grid grid" id="list_new">
-                        <li>
-                            <div class="book_avatar">
-                                <a href="https://truyenqqq.vn/truyen-tranh/shoukoku-no-altair-4291"><img class="center" src="https://i.truyenvua.com/ebook/190x247/shoukoku-no-altair_1522157111.jpg?gt=hdfgdfg&mobile=2" alt="Shoukoku No Altair"></a>
 
-                                <div class="top-notice">
-                                    <span class="time-ago">17 Phút Trước</span>
-                                </div>
-                            </div>
-                            <div class="book_info">
-                                <div class="book_name qtip" data-qtip="#truyen-tranh-4291">
-                                    <h3><a title="Shoukoku No Altair" href="https://truyenqqq.vn/truyen-tranh/shoukoku-no-altair-4291">Shoukoku No Altair</a></h3>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="text_detail">
-                                    <span>
-                                        <i class="fa fa-bookmark"></i> 507
-                                    </span>
-                                    <span>
-                                        <i class="fa fa-eye"></i>94,173
-                                    </span>
-                                </div>
-                                <div class="last_chapter">
-                                    <a href="https://truyenqqq.vn/truyen-tranh/shoukoku-no-altair-4291-chap-76.html" title="Chapter 76">Chapter 76</a>
-                                </div>
-                                <div class="more-info" id="truyen-tranh-4291" style="display:none;">
-                                    <div class="title-more">Shoukoku No Altair</div>
-                                    <div class="title-more-other">Tên khác: Biên Sử Của Cuộc Chiến; Biên Niên Sử Kí</div>
-                                    <p class="info">Tình trạng: Đang Cập Nhật</p>
-                                    <p class="info">Lượt xem: 94,173</p>
-                                    <p class="info">Lượt theo dõi: 507</p>
-                                    <div class="list-tags">
-                                        <p class="blue">Action</p>
-                                        <p class="blue">Adventure</p>
-                                        <p class="blue">Drama</p>
-                                        <p class="blue">Fantasy</p>
-                                        <p class="blue">Shounen</p>
-                                        <p class="blue">Historical</p>
-                                    </div>
-                                    <div class="excerpt">
-                                        Mahmut là một Pasha trẻ phục vụ trong Hội đồng nhân chung của Türkiye. Mây đen chiến tranh đang tập trung trên đất nước của anh ấy. Với Hội đồng Türkiye được phân chia giữa phe hiếu chiến và phe hòa bình, Mahmut
-                                        bắt đầu cuộc tìm kiếm của mình để gìn giữ hòa bình bằng mọi giá. Như anh  tìm thấy bản c...
+                    @foreach (var item in Model.ListStoriesUpdate)
+                    {
+                        <ul class="list_grid grid" id="list_new">
+                            <li>
+                                <div class="book_avatar">
+                                    <a href="#"><img class="center" src="@item.story_image" alt="@item.story_name"></a>
+
+                                    <div class="top-notice">
+                                        <span class="time-ago">24 Phút Trước</span> <span class="type-label hot">Hot</span>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="clear"></div>
-                        </li>
-                        <li>
-                            <div class="book_avatar">
-                                <a href="https://truyenqqq.vn/truyen-tranh/ke-that-nghiep-bat-kha-chien-bai-13060"><img class="center" src="https://i.truyenvua.com/ebook/190x247/ke-that-nghiep-bat-kha-chien-bai_1665130340.jpg?gt=hdfgdfg&mobile=2" alt="Kẻ Thất Nghiệp Bất Khả Chiến Bại"></a>
-
-                                <div class="top-notice">
-                                    <span class="time-ago">24 Phút Trước</span> <span class="type-label hot">Hot</span>
-                                </div>
-                            </div>
-                            <div class="book_info">
-                                <div class="book_name qtip" data-qtip="#truyen-tranh-13060">
-                                    <h3><a title="Kẻ Thất Nghiệp Bất Khả Chiến Bại" href="https://truyenqqq.vn/truyen-tranh/ke-that-nghiep-bat-kha-chien-bai-13060">Kẻ Thất Nghiệp Bất Khả Chiến Bại</a></h3>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="text_detail">
-                                    <span>
-                                        <i class="fa fa-bookmark"></i> 2,126
-                                    </span>
-                                    <span>
-                                        <i class="fa fa-eye"></i>264,124
-                                    </span>
-                                </div>
-                                <div class="last_chapter">
-                                    <a href="https://truyenqqq.vn/truyen-tranh/ke-that-nghiep-bat-kha-chien-bai-13060-chap-39.html" title="Chapter 39">Chapter 39</a>
-                                </div>
-                                <div class="more-info" id="truyen-tranh-13060" style="display:none;">
-                                    <div class="title-more">Kẻ Thất Nghiệp Bất Khả Chiến Bại</div>
-                                    <div class="title-more-other">Tên khác: Vô Công Nhưng Vô Địch</div>
-                                    <p class="info">Tình trạng: Đang Cập Nhật</p>
-                                    <p class="info">Lượt xem: 264,124</p>
-                                    <p class="info">Lượt theo dõi: 2,126</p>
-                                    <div class="list-tags">
-                                        <p class="blue">Action</p>
-                                        <p class="blue">Fantasy</p>
-                                        <p class="blue">Manhwa</p>
-                                        <p class="blue">Truyện Màu</p>
+                                <div class="book_info">
+                                    <div class="book_name qtip" data-qtip="#truyen-tranh-13060">
+                                        <h3><a title="@item.story_name" href="#">@item.story_name</a></h3>
                                     </div>
-                                    <div class="excerpt">
-                                        Shin Minchul được triệu hồi đến một thế giới gọi là ‘Anhelles'. 200 năm qua đi với vô vàn cuộc chiến sinh tồn và tiêu diệt kẻ thù thống trị toàn lục địa Jeros, kết thúc chuỗi ngày chiến tranh khắc nghiệt. Sau đó,
-                                        Minchul quay về Trái Đất, bỏ lại Anhelles sau lưng, muốn sống một cuộc sống giàu có hưở...
-                                    </div>
+                                    
+                                        <div class="clear"></div>
+                                       
+                                            <div class="text_detail">
+                                                <span>
+                                                    <i class="fa fa-bookmark"></i> 2,126
+                                                </span>
+                                                <span>
+                                                    <i class="fa fa-eye"></i>264,124
+                                                </span>
+                                            </div>
+                                            <div class="last_chapter">
+                                                <a href="#" title="@item.chapter_last">Chapter @item.chapter_last</a>
+                                            </div>
+                                           
                                 </div>
-                            </div>
-
-                            <div class="clear"></div>
 
 
+                            </li>
+                        </ul>
+                    }
 
-                        </li>
-                    </ul>
                     <div class="clear"></div>
                 </div>
             </div>

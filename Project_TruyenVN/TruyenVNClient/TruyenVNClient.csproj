@@ -6,4 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TruyenVNAPI\TruyenVNAPI.csproj" />
+    <ProjectReference Include="..\TruyenVN\TruyenVN.csproj" />
+  </ItemGroup>
+
 </Project>

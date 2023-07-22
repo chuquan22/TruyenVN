@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "W7jhhCE1HlQf1UZjvO2qpl4C+2Ug6USGh9nQ2BAl9i8=",
+  "Hash": "oRhQXYv5CA6Vpkf4+f1KoS7yx3QFiXSd9VxfgR2c1GY=",
   "Source": "TruyenVNClient",
   "BasePath": "_content/TruyenVNClient",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNAPI\\TruyenVNAPI.csproj",
+      "Version": 2,
+      "Source": "TruyenVNAPI",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "TruyenVNClient\\wwwroot",

@@ -34,6 +34,7 @@ namespace TruyenVNAPI
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddControllers().AddOData(options => options.Select().Filter().OrderBy().Expand().Count().SetMaxTop(null)
                             .AddRouteComponents("odata", modelBuilder.GetEdmModel()));
+            builder.Services.AddCors();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -46,7 +47,12 @@ namespace TruyenVNAPI
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
 
             app.MapControllers();
 
