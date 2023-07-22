@@ -1,0 +1,136 @@
+﻿@page
+@model TruyenVNClient.Pages.TruyenTranhModel
+@{
+}
+
+<body class="detail light">
+    <div class="content ">
+
+        <div class="div_middle">
+            <div class="alert-note-fix"></div>
+            <p style="color: red">@ViewData["error"]</p>
+
+            <div class="main_content">
+                <div class="book_detail">
+                    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="/Index">
+                                <span itemprop="name">Trang Chủ</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="/TruyenTranh?id=@Model.Story.story_id">
+                                <span itemprop="name">@Model.Story.story_name</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                    </ol>
+                    <div class="book_info">
+                        <div class="book_avatar"><img alt="@Model.Story.story_name" src="@Model.Story.story_image"></div>
+                        <div class="book_other" itemscope="" itemtype="http://schema.org/Book">
+                            <h1 itemprop="name">@Model.Story.story_name</h1>
+                            <div class="txt">
+                                <ul class="list-info">
+                                    <li class="author row">
+                                        <p class="name col-xs-3">
+                                            <i class="fa fa-user"></i> Tác giả
+                                        </p>
+                                        <p class="col-xs-9"><a class="org" href="#">Suzuki Nakaba</a></p>
+                                    </li>
+                                    <li class="status row">
+                                        <p class="name col-xs-3">
+                                            <i class="fa fa-rss"></i> Tình trạng
+                                        </p>
+                                        <p class="col-xs-9">Đang Cập Nhật</p>
+                                    </li>
+                                    <li class="row">
+                                        <p class="name col-xs-3">
+                                            <i class="fa fa-eye"></i> Lượt xem
+                                        </p>
+                                        <p class="col-xs-9">@Model.Story.View</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <ul class="list01">
+                                @foreach (var item in Model.Categories)
+                                {
+                                    <li class="li03"><a href="/Category?id=@item.cate_id">@item.cate_name</a></li>
+                                }
+                            </ul>
+                            <div class="clear"></div>
+                            <ul class="story-detail-menu">
+                                <li class="li01"><a href="https://truyenqqq.vn/truyen-tranh/that-hinh-dai-toi-740-chap-1.html" class="button is-danger is-rounded"><i class="fa fa-book"></i> Đọc từ đầu</a></li>
+                                <li class="li02"><a href="javascript:void(0);" class="button is-danger is-rounded btn-subscribe subscribeBook" data-page="index" data-id="740"><span class="fa fa-heart"></span> Theo dõi</a></li>
+                                <li class="li03"><a href="javascript:void(0);" class="button is-danger is-rounded btn-like" data-id="740"><i class="fa fa-thumbs-up"></i> Thích</a></li>
+                                <li class="li04"><a href="https://truyenqqq.vn/truyen-tranh/that-hinh-dai-toi-740-chap-346.html" class="button is-info is-rounded"><i class="fa fa-location-arrow" aria-hidden="true"></i> Đọc tiếp</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <h3><i class="fa fa-info-circle"></i> Giới thiệu</h3>
+                    <div class="story-detail-info detail-content">
+                        <p>
+                            @Model.Story.description
+                        </p>
+                    </div>
+                    <div id="ad_info" style="padding-top: 20px; max-width: 1200px; margin: 0 auto; overflow: hidden;">
+
+                        <div class="">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8510055099699385" crossorigin="anonymous"></script>
+
+
+                        </div>
+                    </div>
+                    <h3><i class="fa fa-database" aria-hidden="true"></i> Danh sách chương</h3>
+                    <div class="list_chapter">
+                        <div class="works-chapter-list">
+                            @foreach (var item in Model.chapters)
+                            {
+                                <div class="works-chapter-item">
+                                    <div class="col-md-10 col-sm-10 col-xs-8 name-chap">
+                                        <a target="_self" class="" href="/ReadComic?chapter=@item.chapter_number&storyId=@item.story_id">@item.title</a>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-4 time-chap">
+                                        @item.create_at.Date
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                    <div id="ad_info" style="padding-top: 20px; max-width: 1200px; margin: 0 auto; overflow: hidden;">
+                    </div>
+                    <div class="comment-container" id="comment_list">
+                        <span class="story-detail-title"><i class="fa fa-comments"></i>Bình Luận (<span class="comment-count">1529</span>)</span>
+                        <div class="notify-fanpage">
+                            Vào <a rel="nofollow" href="https://www.facebook.com/truyenqqq" target="_blank">Fanpage</a> like và theo dõi để ủng hộ TruyenQQ nhé.
+                        </div>
+                        <div class="group01 comments-container">
+                            <div class="form-comment main_comment">
+                                <div class="message-content">
+                                    <div class="comment-placeholder" onclick="openComment();">hãy bình luận có văn hóa để tránh bị khóa tài khoản</div>
+                                    <div class="mess-input hidden">
+                                        <textarea class="textarea" placeholder="Nội dung bình luận" id="content_comment"></textarea>
+                                        <div>
+                                            <span class="text-center"><input value="qiqi_xUrrH_1688546829" class="input" id="name_comment" type="text" placeholder="Họ tên"></span>
+                                            <span class="text-center"><input value="chuquan2k1@gmail.com" class="input" id="email_comment" type="email" placeholder="Email" disabled></span>
+                                            <button type="submit" class="button is-info is-rounded submit_comment" onclick="sendComment(0);">Gửi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-comment">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>

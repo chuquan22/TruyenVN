@@ -1,0 +1,100 @@
+﻿@page
+@model TruyenVNClient.Pages.ReadComicModel
+@{
+}
+
+
+<div class="div_middle" style="background-color: black">
+    <div class="alert-note-fix"></div>
+    <div class="main_content">
+
+        <div id="chapter_content">
+            <div class="chapter_content_div chapter_new_load">
+                <div class="box">
+                    <div id="path" class="path-top">
+                        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a itemprop="item" href="https://truyenqqq.vn/">
+                                    <span itemprop="name">Trang Chủ</span>
+                                </a>
+                                <meta itemprop="position" content="1" />
+                            </li>
+                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a itemprop="item" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926">
+                                    <span itemprop="name">Võ Luyện Đỉnh Phong</span>
+                                </a>
+                                <meta itemprop="position" content="2" />
+                            </li>
+                            <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a itemprop="item" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3467.html">
+                                    <span itemprop="name">Chương 3467</span>
+                                </a>
+                                <meta itemprop="position" content="3" />
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h1 class="detail-title txt-primary"><a href="">@Model.Chapters.SingleOrDefault().Stories.story_name</a> - @Model.Chapters.SingleOrDefault().title</h1>
+                        <time datetime="2023-07-21T13:59:14+07:00">(Cập nhật lúc: 22:59 21/07/2023)</time>
+                    </div>
+                    <div class="chapter-control">
+                        <div class="mrt10">
+                            <a rel="nofollow" href="javascript:popup('report')" class="alertError btn btn-warning"><i class="fa fa-exclamation-triangle"></i> Báo Lỗi Chương</a>
+                        </div>
+                        <br />
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn btn-info go-btn prev text-white m-1 d-block" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3466.html"><em class="fa fa-arrow-left"></em> Chap trước</a>
+                            <a class="btn btn-info go-btn next text-white m-1 d-none" href="javascript:void(0)">Chap sau <em class="fa fa-arrow-right"></em></a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="chapter_content">
+
+                    <div style="overflow: hidden;" class="text-center">
+                        @foreach(var item in Model.Chapters){
+                        <div id="page_0" class="page-chapter">
+                            <img class="lazy" src="@item.content" data-original="@item.content" alt="Chapter @item.title" />
+                        </div>
+                        }
+                    </div>
+
+                    <div id="ad_info" style="margin-bottom: 10px;">
+                    </div>
+
+                    <div class="clear"></div>
+
+                </div>
+                <div class="clear"></div>
+                <div class="box bottom-chap">
+                    <div class="chapter-control" style="z-index: 9999">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn btn-info go-btn prev text-white m-1 d-block" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3466.html"><em class="fa fa-arrow-left"></em> Chap trước</a>
+                            <a class="btn btn-info go-btn next text-white m-1 d-none" href="#">Chap sau <em class="fa fa-arrow-right"></em></a>
+                        </div>
+                    </div>
+                    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="https://truyenqqq.vn/">
+                                <span itemprop="name">Trang Chủ</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926">
+                                <span itemprop="name">Võ Luyện Đỉnh Phong</span>
+                            </a>
+                            <meta itemprop="position" content="2" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3467.html">
+                                <span itemprop="name">Chương 3467</span>
+                            </a>
+                            <meta itemprop="position" content="3" />
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

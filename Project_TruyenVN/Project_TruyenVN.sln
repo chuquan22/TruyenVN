@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TruyenVNAPI", "TruyenVNAPI\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TruyenVN", "TruyenVN\TruyenVN.csproj", "{06E84C32-5264-4D5F-A5DC-A488FCFF8072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruyenVNClient", "TruyenVNClient\TruyenVNClient.csproj", "{EA6EE981-7000-4E99-93AF-7B5DD5819BE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TruyenVNClient", "TruyenVNClient\TruyenVNClient.csproj", "{EA6EE981-7000-4E99-93AF-7B5DD5819BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

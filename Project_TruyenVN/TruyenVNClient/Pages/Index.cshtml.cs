@@ -25,9 +25,6 @@ namespace TruyenVNClient.Pages
         public List<StoriesDTO> ListStoriesUpdate { get; set; }
 
         [BindProperty]
-        public List<StoriesDTO> ListStoriesHot { get; set; }
-
-        [BindProperty]
         public List<StoriesDTO> ListStoriesGood { get; set; }
 
         [BindProperty]
@@ -36,10 +33,15 @@ namespace TruyenVNClient.Pages
         [BindProperty]
         public StoriesDTO Top1Stories { get; set; }
 
+        [BindProperty]
+        public List<StoriesDTO> Top2and3Stories { get; set; }
+
+        [BindProperty]
+        public List<StoriesDTO> Top4and5Stories { get; set; }
+
 
         public async Task<IActionResult> OnGetAsync()
         {
-            bool check = false;
             try
             {
                 HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}?$orderby=update_at desc").Result;
@@ -57,6 +59,9 @@ namespace TruyenVNClient.Pages
                     chapter_last = GetChapterLast((int)x["story_id"]),
                 }).ToList();
                 GetTop1();
+                GetTop2and3();
+                GetTop4and5();
+                GetListStoryGood();
                 return Page();
             }
             catch (Exception ex)
@@ -110,6 +115,61 @@ namespace TruyenVNClient.Pages
                 update_at = (DateTime)x["update_at"],
                 chapter_last = GetChapterLast((int)x["story_id"]),
             }).SingleOrDefault();
+        }
+
+        public void GetTop2and3()
+        {
+            HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}?$orderby=View desc&$skip=1&$top=2").Result;
+            string strData = responseMessage.Content.ReadAsStringAsync().Result;
+
+            dynamic temp = JObject.Parse(strData);
+            Top2and3Stories = ((JArray)temp.value).Select(x => new StoriesDTO
+            {
+                story_id = (int)x["story_id"],
+                story_name = (string)x["story_name"],
+                story_image = (string)x["story_image"],
+                description = (string)x["description"],
+                isComic = (bool)x["isComic"],
+                update_at = (DateTime)x["update_at"],
+                chapter_last = GetChapterLast((int)x["story_id"]),
+            }).ToList();
+        }
+
+        public void GetTop4and5()
+        {
+            HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}?$orderby=View desc&$skip=3&$top=2").Result;
+            string strData = responseMessage.Content.ReadAsStringAsync().Result;
+
+            dynamic temp = JObject.Parse(strData);
+            Top4and5Stories = ((JArray)temp.value).Select(x => new StoriesDTO
+            {
+                story_id = (int)x["story_id"],
+                story_name = (string)x["story_name"],
+                story_image = (string)x["story_image"],
+                description = (string)x["description"],
+                isComic = (bool)x["isComic"],
+                update_at = (DateTime)x["update_at"],
+                chapter_last = GetChapterLast((int)x["story_id"]),
+            }).ToList();
+        }
+
+
+        public void GetListStoryGood()
+        {
+            HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}?$filter=isComic eq true&$top=7").Result;
+            string strData = responseMessage.Content.ReadAsStringAsync().Result;
+
+            dynamic temp = JObject.Parse(strData);
+            ListStoriesGood = ((JArray)temp.value).Select(x => new StoriesDTO
+            {
+                story_id = (int)x["story_id"],
+                story_name = (string)x["story_name"],
+                story_image = (string)x["story_image"],
+                description = (string)x["description"],
+                isComic = (bool)x["isComic"],
+                update_at = (DateTime)x["update_at"],
+                chapter_last = GetChapterLast((int)x["story_id"]),
+            }).ToList();
         }
 
     }

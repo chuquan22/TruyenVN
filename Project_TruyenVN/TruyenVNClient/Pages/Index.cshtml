@@ -16,32 +16,22 @@
                 <div class="container">
                     <div class="tile is-ancestor">
                         <div class="tile is-3 is-vertical is-parent">
-                            <div class="tile is-child">
-                                <a href="https://truyenqqq.vn/truyen-tranh/thanh-guom-diet-quy-2624-chap-205-6.html">
-                                    <div class="hero-item">
-                                        <img class="cover" src="https://i.truyenvua.com/slider/290x191/slider_1559213537.jpg?gt=hdfgdfg&mobile=2" alt="cover" />
-                                        <div class="bottom-shadow"></div>
-                                        <div class="captions">
-                                            <h3>Thanh Gươm Diệt Quỷ</h3>
+                            @foreach (var item in Model.Top2and3Stories)
+                            {
+                                <div class="tile is-child">
+                                    <a href="#">
+                                        <div class="hero-item">
+                                            <img class="cover" src="@item.story_image" alt="cover" />
+                                            <div class="bottom-shadow"></div>
+                                            <div class="captions">
+                                                <h3>@item.story_name</h3>
+                                            </div>
+                                            <div class="chapter green">Chương @item.chapter_last</div>
                                         </div>
-                                        <div class="chapter green">Chương 205.6</div>
-                                    </div>
-                                    <!-- /.hero-item -->
-                                </a>
-                            </div>
-                            <div class="tile is-child">
-                                <a href="https://truyenqqq.vn/truyen-tranh/one-piece-128-chap-1088.html">
-                                    <div class="hero-item">
-                                        <img class="cover" src="https://i.truyenvua.com/slider/290x191/slider_1559211185.jpg?gt=hdfgdfg&mobile=2" alt="cover" />
-                                        <div class="bottom-shadow"></div>
-                                        <div class="captions">
-                                            <h3>One Piece</h3>
-                                        </div>
-                                        <div class="chapter red">Chương 1088</div>
-                                    </div>
-                                    <!-- /.hero-item -->
-                                </a>
-                            </div>
+                                        <!-- /.hero-item -->
+                                    </a>
+                                </div>
+                            }
                         </div>
                         <div class="tile is-parent">
                             <div class="tile is-child">
@@ -53,39 +43,29 @@
                                             <h5>@Model.Top1Stories.description</h5>
                                             <h3>@Model.Top1Stories.story_name</h3>
                                         </div>
-                                        <div class="chapter violet">Chương 394</div>
+                                        <div class="chapter violet">Chương @Model.Top1Stories.chapter_last</div>
                                     </div>
                                     <!-- /.hero-item -->
                                 </a>
                             </div>
                         </div>
                         <div class="tile is-3 is-vertical is-parent">
-                            <div class="tile is-child">
-                                <a href="https://truyenqqq.vn/truyen-tranh/hoi-phap-su-nhiem-vu-tram-nam-5212-chap-136.html">
-                                    <div class="hero-item">
-                                        <img class="cover" src="https://i.truyenvua.com/slider/290x191/slider_1561609693.jpg?gt=hdfgdfg&mobile=2" alt="cover" />
-                                        <div class="bottom-shadow"></div>
-                                        <div class="captions">
-                                            <h3>Hội Pháp Sư Nhiệm Vụ Trăm Năm</h3>
+                            @foreach (var item in Model.Top4and5Stories)
+                            {
+                                <div class="tile is-child">
+                                    <a href="#">
+                                        <div class="hero-item">
+                                            <img class="cover" src="@item.story_image" alt="cover" />
+                                            <div class="bottom-shadow"></div>
+                                            <div class="captions">
+                                                <h3>@item.story_name</h3>
+                                            </div>
+                                            <div class="chapter green">Chương @item.chapter_last</div>
                                         </div>
-                                        <div class="chapter blue">Chương 136</div>
-                                    </div>
-                                    <!-- /.hero-item -->
-                                </a>
-                            </div>
-                            <div class="tile is-child">
-                                <a href="https://truyenqqq.vn/truyen-tranh/vuong-gia-thien-ha-245-chap-763.html">
-                                    <div class="hero-item">
-                                        <img class="cover" src="https://i.truyenvua.com/slider/290x191/slider_1567830171.jpg?gt=hdfgdfg&mobile=2" alt="cover" />
-                                        <div class="bottom-shadow"></div>
-                                        <div class="captions">
-                                            <h3>Vương Giả Thiên Hạ</h3>
-                                        </div>
-                                        <div class="chapter orange">Chương 763</div>
-                                    </div>
-                                    <!-- /.hero-item -->
-                                </a>
-                            </div>
+                                        <!-- /.hero-item -->
+                                    </a>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -100,105 +80,31 @@
                 </h2>
                 <div id="div_suggest">
                     <ul class="list_grid grid" id="list_suggest">
-                        <li>
-                            <div class="book_avatar">
-                                <a href="https://truyenqqq.vn/truyen-tranh/bach-luyen-thanh-than-1099"><img class="center" src="https://i.truyenvua.com/ebook/190x247/bach-luyen-thanh-than_1444715692.jpg?gt=hdfgdfg&mobile=2" alt="Bách Luyện Thành Thần"></a>
-                                <div class="top-notice">
-                                    <span class="time-ago">1 Giờ Trước</span> <span class="type-label hot">Hot</span>
+                        @foreach (var item in Model.ListStoriesGood)
+                        {
+                            <li>
+                                <div class="book_avatar">
+                                    <a href="#"><img class="center" src="@item.story_image" alt="@item.story_name"></a>
+                                    @if (item.story_id % 2 == 0)
+                                    {
+                                        <div class="top-notice">
+                                            <span class="type-label hot">Hot</span>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="book_info">
+                                    <div class="book_name">
+                                        <h3 itemprop="name"><a title="@item.story_name" href="#">@item.story_name</a></h3>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="last_chapter">
+                                        <a href="#">Chương @item.chapter_last</a>
+                                    </div>
                                 </div>
 
-                            </div>
-                            <div class="book_info">
-                                <div class="book_name">
-                                    <h3 itemprop="name"><a title="Bách Luyện Thành Thần" href="https://truyenqqq.vn/truyen-tranh/bach-luyen-thanh-than-1099">Bách Luyện Thành Thần</a></h3>
-                                </div>
                                 <div class="clear"></div>
-                                <div class="last_chapter">
-                                    <a href="https://truyenqqq.vn/truyen-tranh/bach-luyen-thanh-than-1099-chap-1103.html">Chương 1103</a>
-                                </div>
-                            </div>
-
-                            <div class="clear"></div>
-                        </li>
-                        <li>
-                            <div class="book_avatar">
-                                <a href="https://truyenqqq.vn/truyen-tranh/toi-viet-sach-de-thang-cap-10492"><img class="center" src="https://i.truyenvua.com/ebook/190x247/toi-viet-sach-de-thang-cap_1604896199.jpg?gt=hdfgdfg&mobile=2" alt="Tôi Viết Sách Để Thăng Cấp"></a>
-                                <div class="top-notice">
-                                    <span class="time-ago">3 Giờ Trước</span> <span class="type-label hot">Hot</span>
-                                </div>
-
-                            </div>
-                            <div class="book_info">
-                                <div class="book_name">
-                                    <h3 itemprop="name"><a title="Tôi Viết Sách Để Thăng Cấp" href="https://truyenqqq.vn/truyen-tranh/toi-viet-sach-de-thang-cap-10492">Tôi Viết Sách Để Thăng Cấp</a></h3>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="last_chapter">
-                                    <a href="https://truyenqqq.vn/truyen-tranh/toi-viet-sach-de-thang-cap-10492-chap-145.html">Chương 145</a>
-                                </div>
-                            </div>
-
-                            <div class="clear"></div>
-                        </li>
-                        <li>
-                            <div class="book_avatar">
-                                <a href="https://truyenqqq.vn/truyen-tranh/toan-chuc-phap-su-4140"><img class="center" src="https://i.truyenvua.com/ebook/190x247/toan-chuc-phap-su_1518956513.jpg?gt=hdfgdfg&mobile=2" alt="Toàn Chức Pháp Sư"></a>
-                                <div class="top-notice">
-                                    <span class="time-ago">6 Giờ Trước</span> <span class="type-label hot">Hot</span>
-                                </div>
-
-                            </div>
-                            <div class="book_info">
-                                <div class="book_name">
-                                    <h3 itemprop="name"><a title="Toàn Chức Pháp Sư" href="https://truyenqqq.vn/truyen-tranh/toan-chuc-phap-su-4140">Toàn Chức Pháp Sư</a></h3>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="last_chapter">
-                                    <a href="https://truyenqqq.vn/truyen-tranh/toan-chuc-phap-su-4140-chap-1065.html">Chương 1065</a>
-                                </div>
-                            </div>
-
-                            <div class="clear"></div>
-                        </li>
-                        <li>
-                            <div class="book_avatar">
-                                <a href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926"><img class="center" src="https://i.truyenvua.com/ebook/190x247/vo-luyen-dinh-phong_1514903369.jpg?gt=hdfgdfg&mobile=2" alt="Võ Luyện Đỉnh Phong"></a>
-                                <div class="top-notice">
-                                    <span class="time-ago">7 Giờ Trước</span> <span class="type-label hot">Hot</span>
-                                </div>
-
-                            </div>
-                            <div class="book_info">
-                                <div class="book_name">
-                                    <h3 itemprop="name"><a title="Võ Luyện Đỉnh Phong" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926">Võ Luyện Đỉnh Phong</a></h3>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="last_chapter">
-                                    <a href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3464.html">Chương 3464</a>
-                                </div>
-                            </div>
-
-                            <div class="clear"></div>
-                        </li>
-                        <li>
-                            <div class="book_avatar">
-                                <a href="https://truyenqqq.vn/truyen-tranh/noragami-629"><img class="center" src="https://i.truyenvua.com/ebook/190x247/noragami_1552633208.jpg?gt=hdfgdfg&mobile=2" alt="Noragami"></a>
-                                <div class="top-notice">
-                                    <span class="time-ago">13 Giờ Trước</span> <span class="type-label hot">Hot</span>
-                                </div>
-
-                            </div>
-                            <div class="book_info">
-                                <div class="book_name">
-                                    <h3 itemprop="name"><a title="Noragami" href="https://truyenqqq.vn/truyen-tranh/noragami-629">Noragami</a></h3>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="last_chapter">
-                                    <a href="https://truyenqqq.vn/truyen-tranh/noragami-629-chap-106-2.html">Chương 106.2</a>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-                        </li>
+                            </li>
+                        }
                     </ul>
                     <div class="clear"></div>
                     <div class="scroll" style="display: block;">
@@ -232,31 +138,62 @@
                         <ul class="list_grid grid" id="list_new">
                             <li>
                                 <div class="book_avatar">
-                                    <a href="#"><img class="center" src="@item.story_image" alt="@item.story_name"></a>
+                                    <a href="/TruyenTranh?id=@item.story_id"><img class="center" src="@item.story_image" alt="@item.story_name"></a>
+                                    @{
+                                        // Giả sử item.update_at là một giá trị DateTime biểu thị thời điểm cập nhật
+                                        DateTime updatedDateTime = item.update_at;
+                                        DateTime currentDateTime = DateTime.Now;
+                                        TimeSpan timeElapsed = currentDateTime - updatedDateTime;
 
+                                        // Xác định các thành phần của khoảng thời gian (ngày, giờ, phút, giây)
+                                        int days = timeElapsed.Days;
+                                        int hours = timeElapsed.Hours;
+                                        int minutes = timeElapsed.Minutes;
+
+                                        // Xây dựng chuỗi kết quả dựa trên khoảng thời gian tính được
+                                        string result = "";
+                                        if (days > 0)
+                                        {
+                                            result += days + " ngày ";
+                                        }else
+                                        if (hours > 0)
+                                        {
+                                            result += hours + " giờ ";
+                                        }else
+                                        if (minutes > 0)
+                                        {
+                                            result += minutes + " phút ";
+                                        }
+                                      
+
+                                        // Loại bỏ khoảng trắng cuối cùng nếu có
+                                        result = result.Trim();
+
+                                        // Hiển thị kết quả trong thẻ span có class "time-ago"
+                                    }
                                     <div class="top-notice">
-                                        <span class="time-ago">24 Phút Trước</span> <span class="type-label hot">Hot</span>
+                                        <span class="time-ago">@result trước</span> <span class="type-label hot">Hot</span>
                                     </div>
                                 </div>
                                 <div class="book_info">
                                     <div class="book_name qtip" data-qtip="#truyen-tranh-13060">
-                                        <h3><a title="@item.story_name" href="#">@item.story_name</a></h3>
+                                        <h3><a title="@item.story_name" href="/TruyenTranh?id=@item.story_id">@item.story_name</a></h3>
                                     </div>
-                                    
-                                        <div class="clear"></div>
-                                       
-                                            <div class="text_detail">
-                                                <span>
-                                                    <i class="fa fa-bookmark"></i> 2,126
-                                                </span>
-                                                <span>
-                                                    <i class="fa fa-eye"></i>264,124
-                                                </span>
-                                            </div>
-                                            <div class="last_chapter">
-                                                <a href="#" title="@item.chapter_last">Chapter @item.chapter_last</a>
-                                            </div>
-                                           
+
+                                    <div class="clear"></div>
+
+                                    <div class="text_detail">
+                                        <span>
+                                            <i class="fa fa-bookmark"></i> 2,126
+                                        </span>
+                                        <span>
+                                            <i class="fa fa-eye"></i>264,124
+                                        </span>
+                                    </div>
+                                    <div class="last_chapter">
+                                        <a href="#" title="@item.chapter_last">Chapter @item.chapter_last</a>
+                                    </div>
+
                                 </div>
 
 
