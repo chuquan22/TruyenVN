@@ -4,103 +4,150 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TruyenVN - Đọc truyện online, đọc truyện hay</title>
-    <script src="https://kit.fontawesome.com/3a5e19e6c3.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
-    <link rel="stylesheet" href="~/css/finished-item.css" asp-append-version="true">
-    <link rel="shortcut icon" type="image/x-icon" href="https://static.8cache.com/favicon.ico">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/TruyenVNClient.styles.css" asp-append-version="true" />
+    <link href="https://st.truyenqqq.vn/template/frontend/styles/style.css?v=1.8.8" type="text/css" rel="stylesheet">
+    <link href="https://st.truyenqqq.vn/template/frontend/styles/dark_style.css?v=1.3.3" type="text/css" rel="stylesheet">
+    <link href="https://st.truyenqqq.vn/template/frontend/icon/css/font-awesome.min.css?v=1.2.2" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="https://banner2.cleanpng.com/20180529/lje/kisspng-flag-of-vietnam-vietnam-flag-5b0cde2898f552.5702757415275699606265.jpg">
+
+
 </head>
-<body>
-    <div class="wrapper">
-        <div class="header">
-            <div class="navbar">
-                <div class="container">
-                    <div class="nav-header">
-                        <a href="#" title="doc truyen" class="header-logo">TRUYỆN VN</a>
-                    </div>
-                    <ul class="nav-control">
-                        <li class="dropdown">
-                            <i class="fas fa-list"></i>Danh sách
-                            <ul class="dropdown-menu">
-                                <li>Truyện mới cập nhật</li>
-                                <li>Truyện Hot</li>
-                                <li>Truyện Full</li>
-                                <li>Tiên Hiệp Hay</li>
-                                <li>Kiếm Hiệp Hay</li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <i class="fas fa-list"></i>Thể loại
-                            <ul class="dropdown-menu">
-                                <li>Tiên hiệp</li>
-                                <li>Kiếm Hiệp</li>
-                                <li>Ngôn Tình</li>
-                                <li>Đô Thị</li>
-                                <li>Quan Trường</li>
-                                <li>Võng Du</li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <i class="fas fa-cog"></i>Tùy chỉnh
-                            <div id="setting">
-                                <label for="set-color">Màu nền</label>
-                                <select id="set-color">
-                                    <option value="gray">Xám nhạt</option>
-                                    <option value="dark">Màu tối</option>
-                                </select>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light text-decoration-none">Truyện Tranh</a>
-                        </li>
+<body class="hompage light">
+    <header>
+        <div class="top">
+            <div class="div_middle">
+                <div style="float:left; font-size: 24px">
+                    <a href="/index" title="Truyện tranh online">
+                        <p class="pc_display text-center text-lg-center" style="color: orange"><i class="fa fa-book" aria-hidden="true"></i>TruyenVN</p>
+                        <img alt="TruyenVN" class="mobile_display" src="/img/Logo.png">
+
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li onclick="$('header .top_search').slideDown()" class="other"><i class="fa fa-search" aria-hidden="true"></i></li>
+                        <li><button onclick="popup('register')">Đăng ký</button></li>
+                        <li><button onclick="popup('login')">Đăng nhập</button></li>
                     </ul>
-                    <div class="nav-search">
-                        <input type="search" placeholder="Tìm kiếm"><button id="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="clear"></div>
+                </div>
+                <button id="setting_dark_mode" onclick="setting_active_dark_mode(this);" class="dark_mode">
+                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                </button>
+                <div class="top_search">
+                    <input class="search" id="search_input" placeholder="Bạn muốn tìm truyện gì">
+                    <button>
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search_result">
+                        <ul></ul>
                     </div>
                 </div>
-            </div>
-            <div class="description">
-                <div class="content">Đọc truyện online, đọc truyện chữ, truyện full, truyện hay. Tổng hợp đầy đủ và cập nhật liên tục.</div>
+                <div class="clear"></div>
             </div>
         </div>
-    </div>
+        <div class="bottom">
+            <div class="div_middle">
+                <ul id="header_left_menu">
+                    <li>
+                        <a class="tags_name pc_hover" href="">Trang Chủ</a>
+                    </li>
+                    <li class="menu_hidden">
+                        <p class="tags_name pc_hover mega_menu">Thể Loại <i class="fa fa-caret-down"></i></p>
+                        <div class="hidden_menu book_tags">
+                            <div class="div_middle">
+                                <div class="book_tags_content">
+                                    <p><a title="Action" href="https://truyenqqq.vn/the-loai/action-26.html">Action</a></p>
+                                    <p><a title="Adventure" href="https://truyenqqq.vn/the-loai/adventure-27.html">Adventure</a></p>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu_hidden">
+                        <p class="tags_name pc_hover mega_menu">Xếp Hạng <i class="fa fa-caret-down"></i></p>
+                        <div class="hidden_menu book_tags">
+                            <div class="div_middle">
+                                <div class="book_tags_content">
+                                    <p><a rel="nofollow" href="https://truyenqqq.vn/truyen-yeu-thich.html">Yêu Thích</a></p>
+                                    <p><a rel="nofollow" href="https://truyenqqq.vn/truyen-moi-cap-nhat.html">Mới Cập Nhật</a></p>
+                                    <p><a rel="nofollow" href="https://truyenqqq.vn/truyen-tranh-moi.html">Truyện Mới</a></p>
+                                    <p><a rel="nofollow" href="https://truyenqqq.vn/truyen-hoan-thanh.html">Truyện Full</a></p>
+                                    <p><a rel="nofollow" href="https://truyenqqq.vn/truyen-ngau-nhien.html">Truyện Ngẫu Nhiên</a></p>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu_hidden">
+                        <a class="tags_name pc_hover" href="https://truyenqqq.vn/truyen-con-gai.html">Con Gái</a>
+                    </li>
+                    <li class="menu_hidden">
+                        <a class="tags_name pc_hover" href="https://truyenqqq.vn/truyen-con-trai.html">Con Trai</a>
+                    </li>
+                    <li class="menu_hidden">
+                        <a class="tags_name pc_hover" rel="nofollow" href="https://truyenqqq.vn/lich-su.html">Lịch Sử</a>
+                    </li>
+                    <li class="menu_hidden">
+                        <a class="tags_name pc_hover" rel="nofollow" href="https://truyenqqq.vn/truyen-dang-theo-doi.html">Theo Dõi</a>
+                    </li>
+
+                </ul>
+
+                <div class="clear"></div>
+            </div>
+            <div class="nav_menu mobile_display"><i onclick="show_bottom_menu(this)" class="fa fa-list" aria-hidden="true"></i></div>
+        </div>
+    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <div class="footer">
-        <div class="container">
-            <div class="introduce">
-                <b>Truyện VN</b> - Đọc truyện online, đọc truyện chữ, truyện hay. Website luôn cập nhật những bộ truyện mới thuộc các thể loại đặc sắc như truyện tiên hiệp, truyện kiếm hiệp, hay truyện ngôn tình một cách nhanh nhất. Hỗ trợ mọi thiết bị như di động và máy tính bảng.
-            </div>
-            <div class="genre-list">
-                <div class="tag">đam mỹ hài</div>
-                <div class="tag">truyện xuyên nhanh</div>
-                <div class="tag">ngôn tình sủng</div>
-                <div class="tag">ngôn tình hài</div>
-                <div class="tag">truyện teen hay</div>
-                <div class="tag">ngôn tình hay</div>
-                <div class="tag">truyện đam mỹ</div>
-                <div class="tag">truyện ngôn tình</div>
-                <div class="tag">ngôn tình hoàn</div>
-                <div class="tag">ngôn tình ngược</div>
-                <div class="tag">truyện kiếm hiệp hay</div>
-                <div class="tag">truyện tiên hiệp hay</div>
-                <div class="tag">truyện hệ thống</div>
-            </div>
-        </div>
-    </div>
+    <footer class="light">
+        <div class="div_middle">
+            <div class="left">
+                <p style="color: orange; font-size: 24px" itemscope="" itemtype="http://schema.org/Organization">
+                    <a itemprop="url" href="/">
+                        <p class="pc_display text-lg-start"><i class="fa fa-book" aria-hidden="true"></i>TruyenVN</p>
+                    </a>
+                </p>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/loadGenreListItem.js asp-append-version="true"></script>
-    <script src="~/js/loadNewSelect.jssp-append-version="true"></script>
+                <p>Trang web đọc truyện trực tuyến. Cảm ơn các bạn đã ủng hộ</p>
+                <p>TruyenVN chúc các bạn đọc truyện vui vẻ! Mọi thắc mắc vui lòng ibox cho Email sau </p>
+                <p class="link">Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2140455255535458444f505061464c40484d0f424e4c"></a></p>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Truyện Tranh</a></li>
+                    <li><a href="/">Truyện Tranh Online</a></li>
+                    <li><a href="/">Truyện Tranh Mới</a></li>
+                    <li><a href="/">Truyện Tranh Hay</a></li>
+                    <li><a href="/">Đọc Truyện Tranh</a></li>
+                    <li><a href="/the-loai/manhwa-49.html">Manhwa</a></li>
+                    <li><a href="/the-loai/manhua-35.html">Hanhua</a></li>
+                    <li><a href="/truyen-moi-cap-nhat/trang-1.html?country=4">Manga</a></li>
+                    <li><a href="/the-loai/ngon-tinh-87.html">Truyện Ngôn Tình</a></li>
+                    <li><a href="/tag/nettruyen">nettruyen</a></li>
+                    <li><a href="/tag/nhattruyen">nhattruyen</a></li>
+                    <li><a href="/tag/blogtruyen">blogtruyen</a></li>
+                    <div class="clear"></div>
+                </ul>
+                <p>
+                    Mọi thông tin và hình ảnh trên website đều được sưu tầm trên Internet. Chúng tôi không sở hữu hay chịu trách nhiệm bất kỳ thông tin nào trên web này. Nếu làm ảnh hưởng đến cá nhân hay tổ chức nào, khi được yêu cầu, chúng tôi sẽ xem xét
+                    và gỡ bỏ ngay lập tức.
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+    <script src="https://st.truyenqqq.vn/template/frontend/js/jquery.lazy.min.js?v=1.1.2" type="text/javascript"></script>
+    <script src="https://st.truyenqqq.vn/template/frontend/js/readmore.min.js?v=1.1.2" type="text/javascript"></script>
+    <script src="https://st.truyenqqq.vn/template/frontend/js/main.js?v=1.5.8" type="text/javascript"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
