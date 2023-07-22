@@ -34,8 +34,8 @@
                         </ol>
                     </div>
                     <div>
-                        <h1 class="detail-title txt-primary"><a href="">@Model.Chapters.SingleOrDefault().Stories.story_name</a> - @Model.Chapters.SingleOrDefault().title</h1>
-                        <time datetime="2023-07-21T13:59:14+07:00">(Cập nhật lúc: 22:59 21/07/2023)</time>
+                        <h1 class="detail-title txt-primary"><a href="">@Model.Chapters.First().Stories.story_name</a> - @Model.Chapters.First().title</h1>
+                        <time datetime="@Model.Chapters.First().create_at">@Model.Chapters.First().update_at</time>
                     </div>
                     <div class="chapter-control">
                         <div class="mrt10">
@@ -54,7 +54,7 @@
                     <div style="overflow: hidden;" class="text-center">
                         @foreach(var item in Model.Chapters){
                         <div id="page_0" class="page-chapter">
-                            <img class="lazy" src="@item.content" data-original="@item.content" alt="Chapter @item.title" />
+                            <img class="lazy text-white" src="@item.content" data-original="@item.content" alt="Chap bị lỗi. Các bạn vui lòng ấn nút báo lỗi ở trên" />
                         </div>
                         }
                     </div>

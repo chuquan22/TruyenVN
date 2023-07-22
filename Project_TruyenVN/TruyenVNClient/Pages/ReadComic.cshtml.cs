@@ -22,11 +22,11 @@ namespace TruyenVNClient.Pages
         }
         [BindProperty]
         public List<Chapter> Chapters { get; set; }
-        public async Task<IActionResult> OnGetAsync(int chapter, int storyId)
+        public async Task<IActionResult> OnGetAsync(float chapter, int storyId)
         {
             try
             {
-                HttpResponseMessage responseMessage = client.GetAsync($"{ChapterAPIUrl}?$expand=Stories(filter=chapter_number eq {chapter})").Result;
+                HttpResponseMessage responseMessage = client.GetAsync($"{ChapterAPIUrl}?$expand=Stories&$filter=chapter_number eq {chapter} and story_id eq {storyId}").Result;
                 string strData = responseMessage.Content.ReadAsStringAsync().Result;
 
                 dynamic temp = JObject.Parse(strData);
@@ -37,9 +37,9 @@ namespace TruyenVNClient.Pages
                     title= (string)x["Title"],
                     content = (string)x["content"],
                     create_at = (DateTime)x["create_at"],
+                    update_at = (DateTime)x["update_at"],
                     Stories = new Story
                     {
-                        
                         story_name = (string)x["Stories"]["story_name"]
                     }
                 }).ToList();
