@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "dM97uY8nW1xx9ng7pxmP4qoDZqPGL2y28z6BkkWcWCXNYx/vuC1ygR3mosTzi+3Pnypg1I/gKBFcP4ERIuGxpA==",
+  "dgSpecHash": "1kHMA+3KrJ/wGjjXvEqJM9mCxbf6gwTDSTkGA2gv9Pkbt/3W+xRd38CFFXJfGmPgUHWJVHlK0526Fv9rAq8qpg==",
   "success": true,
   "projectFilePath": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNClient\\TruyenVNClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\automapper\\8.1.1\\automapper.8.1.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.1.1\\automapper.extensions.microsoft.dependencyinjection.6.1.1.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\cloudinarydotnet\\1.21.0\\cloudinarydotnet.1.21.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.odata\\8.0.1\\microsoft.aspnetcore.odata.8.0.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
