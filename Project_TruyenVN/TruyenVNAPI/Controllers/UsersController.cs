@@ -65,7 +65,7 @@ namespace TruyenVNAPI.Controllers
                 {
                     return BadRequest("Not Find user");
                 }
-                _mapper.Map(user, userDTO);
+                _mapper.Map(userDTO, user);
                 _context.Users.Update(user);
                 _context.SaveChanges();
 

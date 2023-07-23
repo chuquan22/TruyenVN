@@ -21,4 +21,8 @@
     <ProjectReference Include="..\TruyenVN\TruyenVN.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Admin\Category\" />
+  </ItemGroup>
+
 </Project>

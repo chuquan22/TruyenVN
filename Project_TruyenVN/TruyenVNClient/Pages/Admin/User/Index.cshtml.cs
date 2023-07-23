@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace TruyenVNClient.Pages.Admin
+namespace TruyenVNClient.Pages.Admin.User
 {
-    public class UserModel : PageModel
+    public class IndexModel : PageModel
     {
         public void OnGet()
         {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TruyenVNClient.Pages.Admin
 {
-    public class StoryModel : PageModel
+    public class ReportModel : PageModel
     {
         public void OnGet()
         {

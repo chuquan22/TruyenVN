@@ -16,20 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNClient
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Category.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcnkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Story.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3RvcnkuY3NodG1s
+[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/User.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlci5jc2h0bWw=
+[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Stories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3Rvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Stories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3Rvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Stories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3Rvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Category.cshtml]
