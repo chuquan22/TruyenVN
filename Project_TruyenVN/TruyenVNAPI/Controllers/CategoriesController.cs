@@ -66,7 +66,7 @@ namespace TruyenVNAPI.Controllers
                 {
                     return BadRequest("Not Find category");
                 }
-                _mapper.Map(category, categoryDTO);
+                _mapper.Map(categoryDTO, category);
                 _context.Categories.Update(category);
                 _context.SaveChanges();
 

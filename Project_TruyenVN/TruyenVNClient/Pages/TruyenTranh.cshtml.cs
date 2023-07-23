@@ -31,6 +31,9 @@ namespace TruyenVNClient.Pages
         public Story Story { get; set; }
 
         [BindProperty]
+        public Author Author { get; set; }
+
+        [BindProperty]
         public List<Category> Categories { get; set; }
 
         public List<StoryCategory> storyCategories { get; set; }
@@ -52,10 +55,13 @@ namespace TruyenVNClient.Pages
                     story_image = (string)x["story_image"],
                     description = (string)x["description"],
                     isComic = (bool)x["isComic"],
+                    View = (int)x["View"],
+                    author_id = (int)x["author_id"],
                     update_at = (DateTime)x["update_at"],
                 };
                 GetcategoryId(id);
                 GetListChapter(id);
+                GetAuthor(Story.author_id);
                 return Page();
             }catch(Exception ex)
             {
@@ -89,7 +95,7 @@ namespace TruyenVNClient.Pages
 
         public void GetListChapter(int id)
         {
-            HttpResponseMessage responseMessage = client.GetAsync($"{ChapterAPI}?$filter=story_id eq {id}").Result;
+            HttpResponseMessage responseMessage = client.GetAsync($"{ChapterAPI}?$filter=story_id eq {id}&$orderby=chapter_number asc").Result;
             string strData = responseMessage.Content.ReadAsStringAsync().Result;
 
             dynamic temp = JObject.Parse(strData);
@@ -103,5 +109,18 @@ namespace TruyenVNClient.Pages
             }).ToList();
 
         }
+
+        public void GetAuthor(int author)
+        {
+            HttpResponseMessage responseMessage = client.GetAsync($"https://localhost:7029/odata/Authors/{author}").Result;
+            string strData = responseMessage.Content.ReadAsStringAsync().Result;
+
+            dynamic x = JObject.Parse(strData);
+            Author = new Author
+            {
+                author_name = (string)x["author_name"]
+            };
+        }
+        
     }
 }

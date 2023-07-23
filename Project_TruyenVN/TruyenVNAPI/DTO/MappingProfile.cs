@@ -9,6 +9,11 @@ namespace TruyenVNAPI.DTO
         {
             CreateMap<User, UserDTO>().ReverseMap();
             CreateMap<Story, StoryDTO>().ReverseMap();
+            CreateMap<Author, AuthorDTO>().ReverseMap();
+            CreateMap<Category, CategoryDTO>().ReverseMap();
+            CreateMap<Chapter, ChapterDTO>().ReverseMap();
+            CreateMap<Viewed, ViewedDTO>().ReverseMap();
+            CreateMap<Report, ReportDTO>().ReverseMap();
         }
 
     }

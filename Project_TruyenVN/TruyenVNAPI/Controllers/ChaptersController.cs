@@ -68,7 +68,7 @@ namespace TruyenVNAPI.Controllers
                 {
                     return BadRequest("Not Find chapter");
                 }
-                _mapper.Map(author, authorDTO);
+                _mapper.Map(authorDTO, author);
                 _context.Authors.Update(author);
                 _context.SaveChanges();
 

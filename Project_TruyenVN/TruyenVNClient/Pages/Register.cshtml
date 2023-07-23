@@ -1,0 +1,67 @@
+﻿@page
+@model TruyenVNClient.Pages.RegisterModel
+@{
+    Layout = null;
+}
+<head>
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+<style>
+    .login {
+        min-height: 100vh;
+    }
+
+    .bg-image {
+        background-image: url('https://media.licdn.com/dms/image/C5103AQHcDza0EB9sBg/profile-displayphoto-shrink_800_800/0/1585545706356?e=2147483647&v=beta&t=RDgqRsc1E8Bs-cmUfPPN42HbLaK_SmVxLJOHMa7knkI');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .login-heading {
+        font-weight: 300;
+    }
+
+    .btn-login {
+        font-size: 0.9rem;
+        letter-spacing: 0.05rem;
+        padding: 0.75rem 1rem;
+    }
+
+</style>
+<div class="container-fluid ps-md-0">
+    <div class="row g-0">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <h3 class="login-heading mb-4 text-md-center text-info">Register Account!</h3>
+
+                            <form>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">Confirm Password</label>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button class="btn btn-lg btn-warning btn-login text-white text-uppercase fw-bold mb-2" type="submit">Sign in</button>
+                                   
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

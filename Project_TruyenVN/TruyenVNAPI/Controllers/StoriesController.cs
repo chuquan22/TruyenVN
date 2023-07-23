@@ -21,7 +21,7 @@ namespace TruyenVNAPI.Controllers
             _mapper = mapper;
         }
 
-        [EnableQuery(PageSize = 10)]
+        [EnableQuery(PageSize = 12)]
         public IActionResult Get()
         {
             return Ok(_context.Stories);
@@ -56,8 +56,8 @@ namespace TruyenVNAPI.Controllers
 
         }
 
-        [HttpPut]
-        public IActionResult Put(int key, [FromBody] StoryDTO storyDTO)
+        [EnableQuery]
+        public IActionResult Put(int key, [FromBody]StoryDTO storyDTO)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace TruyenVNAPI.Controllers
                 {
                     return BadRequest("Not Find Story");
                 }
-                _mapper.Map(story, storyDTO);
+                _mapper.Map(storyDTO, story);
                 _context.Stories.Update(story);
                 _context.SaveChanges();
 

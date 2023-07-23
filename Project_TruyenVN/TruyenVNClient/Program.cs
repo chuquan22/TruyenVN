@@ -8,7 +8,7 @@ namespace TruyenVNClient
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-
+            builder.Services.AddSession(otp => otp.IdleTimeout = TimeSpan.FromMinutes(30));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -22,8 +22,10 @@ namespace TruyenVNClient
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
+            app.UseStatusCodePagesWithRedirects("/errors/{0}");
 
+            app.UseRouting();
+            app.UseSession();
             app.UseAuthorization();
 
             app.MapRazorPages();

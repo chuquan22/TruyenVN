@@ -219,3 +219,5 @@ D:\FULearning\Summer2023\PRN231\Project\Project_TruyenVN\TruyenVNAPI\obj\Debug\n
 D:\FULearning\Summer2023\PRN231\Project\Project_TruyenVN\TruyenVNAPI\obj\Debug\net6.0\TruyenVNAPI.pdb
 D:\FULearning\Summer2023\PRN231\Project\Project_TruyenVN\TruyenVNAPI\obj\Debug\net6.0\TruyenVNAPI.genruntimeconfig.cache
 D:\FULearning\Summer2023\PRN231\Project\Project_TruyenVN\TruyenVNAPI\obj\Debug\net6.0\ref\TruyenVNAPI.dll
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNAPI\bin\Debug\net6.0\CloudinaryDotNet.dll
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNAPI\bin\Debug\net6.0\Newtonsoft.Json.dll

@@ -14,20 +14,20 @@
                     <div id="path" class="path-top">
                         <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                <a itemprop="item" href="https://truyenqqq.vn/">
+                                <a itemprop="item" href="/Index">
                                     <span itemprop="name">Trang Chủ</span>
                                 </a>
                                 <meta itemprop="position" content="1" />
                             </li>
                             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                <a itemprop="item" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926">
-                                    <span itemprop="name">Võ Luyện Đỉnh Phong</span>
+                                <a itemprop="item" href="/TruyenTranh?id=@Model.Chapters.First().Stories.story_id">
+                                    <span itemprop="name">@Model.Chapters.First().Stories.story_name</span>
                                 </a>
                                 <meta itemprop="position" content="2" />
                             </li>
                             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                <a itemprop="item" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3467.html">
-                                    <span itemprop="name">Chương 3467</span>
+                                <a itemprop="item" href="/ReadComic?chapter=@Model.Chapters.First().chapter_number&storyId=@Model.Chapters.First().story_id">
+                                    <span itemprop="name">Chương @Model.Chapters.First().chapter_number</span>
                                 </a>
                                 <meta itemprop="position" content="3" />
                             </li>
@@ -39,12 +39,17 @@
                     </div>
                     <div class="chapter-control">
                         <div class="mrt10">
-                            <a rel="nofollow" href="javascript:popup('report')" class="alertError btn btn-warning"><i class="fa fa-exclamation-triangle"></i> Báo Lỗi Chương</a>
+                            <a rel="nofollow" href="#" class="alertError btn btn-warning"><i class="fa fa-exclamation-triangle"></i> Báo Lỗi Chương</a>
                         </div>
                         <br />
+                        @{
+                            int chapterNext = (int)Model.Chapters.First().chapter_number + 1;
+                            int chapterPre = (int)Model.Chapters.First().chapter_number -1 ;
+                            int storyId = Model.Chapters.First().Stories.story_id;
+                        }
                         <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn btn-info go-btn prev text-white m-1 d-block" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3466.html"><em class="fa fa-arrow-left"></em> Chap trước</a>
-                            <a class="btn btn-info go-btn next text-white m-1 d-none" href="javascript:void(0)">Chap sau <em class="fa fa-arrow-right"></em></a>
+                            <a class="btn btn-info go-btn prev text-white m-1 d-block" href="/ReadComic?chapter=@chapterPre&storyId=@storyId"><em class="fa fa-arrow-left"></em> Chap trước</a>
+                            <a class="btn btn-info go-btn next text-white m-1 d-block" href="/ReadComic?chapter=@chapterNext&storyId=@storyId">Chap sau <em class="fa fa-arrow-right"></em></a>
                         </div>
                     </div>
                 </div>
@@ -69,26 +74,26 @@
                 <div class="box bottom-chap">
                     <div class="chapter-control" style="z-index: 9999">
                         <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn btn-info go-btn prev text-white m-1 d-block" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3466.html"><em class="fa fa-arrow-left"></em> Chap trước</a>
-                            <a class="btn btn-info go-btn next text-white m-1 d-none" href="#">Chap sau <em class="fa fa-arrow-right"></em></a>
+                            <a class="btn btn-info go-btn prev text-white m-1 d-block" href="/ReadComic?chapter=@chapterPre&storyId=@storyId"><em class="fa fa-arrow-left"></em> Chap trước</a>
+                            <a class="btn btn-info go-btn next text-white m-1 d-block" href="/ReadComic?chapter=@chapterNext&storyId=@storyId">Chap sau <em class="fa fa-arrow-right"></em></a>
                         </div>
                     </div>
                     <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a itemprop="item" href="https://truyenqqq.vn/">
+                            <a itemprop="item" href="/Index">
                                 <span itemprop="name">Trang Chủ</span>
                             </a>
                             <meta itemprop="position" content="1" />
                         </li>
                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a itemprop="item" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926">
-                                <span itemprop="name">Võ Luyện Đỉnh Phong</span>
+                            <a itemprop="item" href="/TruyenTranh?id=@Model.Chapters.First().Stories.story_id">
+                                <span itemprop="name">@Model.Chapters.First().Stories.story_name</span>
                             </a>
                             <meta itemprop="position" content="2" />
                         </li>
                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a itemprop="item" href="https://truyenqqq.vn/truyen-tranh/vo-luyen-dinh-phong-3926-chap-3467.html">
-                                <span itemprop="name">Chương 3467</span>
+                            <a itemprop="item" href="/ReadComic?chapter=@Model.Chapters.First().chapter_number&storyId=@Model.Chapters.First().story_id">
+                                <span itemprop="name">Chương @Model.Chapters.First().chapter_number</span>
                             </a>
                             <meta itemprop="position" content="3" />
                         </li>

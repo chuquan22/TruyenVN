@@ -26,9 +26,9 @@
                             <meta itemprop="position" content="2" />
                         </li>
                     </ol>
-                    <div class="book_info">
-                        <div class="book_avatar"><img alt="@Model.Story.story_name" src="@Model.Story.story_image"></div>
-                        <div class="book_other" itemscope="" itemtype="http://schema.org/Book">
+                    <div class="book_info row">
+                        <div class="book_avatar col-lg-4"><img height="250" width="300" alt="@Model.Story.story_name" src="@Model.Story.story_image"></div>
+                        <div class="book_other col-lg-8" itemscope="" itemtype="http://schema.org/Book">
                             <h1 itemprop="name">@Model.Story.story_name</h1>
                             <div class="txt">
                                 <ul class="list-info">
@@ -36,7 +36,7 @@
                                         <p class="name col-xs-3">
                                             <i class="fa fa-user"></i> Tác giả
                                         </p>
-                                        <p class="col-xs-9"><a class="org" href="#">Suzuki Nakaba</a></p>
+                                        <p class="col-xs-9">@Model.Author.author_name</p>
                                     </li>
                                     <li class="status row">
                                         <p class="name col-xs-3">
@@ -61,15 +61,11 @@
                                 }
                             </ul>
                             <div class="clear"></div>
-                            <ul class="story-detail-menu">
-                                <li class="li01"><a href="https://truyenqqq.vn/truyen-tranh/that-hinh-dai-toi-740-chap-1.html" class="button is-danger is-rounded"><i class="fa fa-book"></i> Đọc từ đầu</a></li>
-                                <li class="li02"><a href="javascript:void(0);" class="button is-danger is-rounded btn-subscribe subscribeBook" data-page="index" data-id="740"><span class="fa fa-heart"></span> Theo dõi</a></li>
-                                <li class="li03"><a href="javascript:void(0);" class="button is-danger is-rounded btn-like" data-id="740"><i class="fa fa-thumbs-up"></i> Thích</a></li>
-                                <li class="li04"><a href="https://truyenqqq.vn/truyen-tranh/that-hinh-dai-toi-740-chap-346.html" class="button is-info is-rounded"><i class="fa fa-location-arrow" aria-hidden="true"></i> Đọc tiếp</a></li>
-                            </ul>
                         </div>
+
                         <div class="clear"></div>
                     </div>
+
                     <h3><i class="fa fa-info-circle"></i> Giới thiệu</h3>
                     <div class="story-detail-info detail-content">
                         <p>
@@ -94,7 +90,7 @@
                                         <a target="_self" class="" href="/ReadComic?chapter=@item.chapter_number&storyId=@item.story_id">@item.title</a>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-4 time-chap">
-                                        @item.create_at.Date
+                                        @item.create_at.ToShortDateString()
                                     </div>
                                 </div>
                             }
@@ -104,10 +100,7 @@
                     <div id="ad_info" style="padding-top: 20px; max-width: 1200px; margin: 0 auto; overflow: hidden;">
                     </div>
                     <div class="comment-container" id="comment_list">
-                        <span class="story-detail-title"><i class="fa fa-comments"></i>Bình Luận (<span class="comment-count">1529</span>)</span>
-                        <div class="notify-fanpage">
-                            Vào <a rel="nofollow" href="https://www.facebook.com/truyenqqq" target="_blank">Fanpage</a> like và theo dõi để ủng hộ TruyenQQ nhé.
-                        </div>
+                        <span class="story-detail-title"><i class="fa fa-comments"></i>Bình Luận </span>
                         <div class="group01 comments-container">
                             <div class="form-comment main_comment">
                                 <div class="message-content">

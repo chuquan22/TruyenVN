@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
+using System.Text;
 using TruyenVNAPI.DTO;
 using TruyenVNAPI.Model;
 
@@ -22,6 +25,8 @@ namespace TruyenVNClient.Pages
         }
         [BindProperty]
         public List<Chapter> Chapters { get; set; }
+        [BindProperty]
+        public Story story { get; set; }
         public async Task<IActionResult> OnGetAsync(float chapter, int storyId)
         {
             try
@@ -34,16 +39,25 @@ namespace TruyenVNClient.Pages
                 {
                     chapter_id = (int)x["chapter_id"],
                     chapter_number = (int)x["chapter_number"],
-                    title= (string)x["Title"],
+                    title = (string)x["Title"],
                     content = (string)x["content"],
                     create_at = (DateTime)x["create_at"],
                     update_at = (DateTime)x["update_at"],
                     Stories = new Story
                     {
-                        story_name = (string)x["Stories"]["story_name"]
+                        story_id = (int)x["Stories"]["story_id"],
+                        story_name = (string)x["Stories"]["story_name"],
+                        story_image = (string)x["Stories"]["story_image"],
+                        author_id = (int)x["Stories"]["author_id"],
+                        create_at = (DateTime)x["Stories"]["create_at"],
+                        update_at = (DateTime)x["Stories"]["update_at"],
+                        description = (string)x["Stories"]["description"],
+                        isComic = (bool)x["Stories"]["isComic"],
+                        View = (int)x["Stories"]["View"]
                     }
                 }).ToList();
-               
+                story = Chapters.First().Stories;
+                EditViewStory(storyId);
                 return Page();
             }
             catch (Exception ex)
@@ -51,6 +65,17 @@ namespace TruyenVNClient.Pages
                 ViewData["mess"] = ex.Message;
                 return Page();
             }
+        }
+
+        public void EditViewStory(int storyId)
+        {
+            story.View += 1;
+            var json = JsonConvert.SerializeObject(story);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = client.PutAsync($"{StoryAPIUrl}({storyId})", content).Result;
+
+            string strData = response.Content.ReadAsStringAsync().Result;
         }
     }
 }

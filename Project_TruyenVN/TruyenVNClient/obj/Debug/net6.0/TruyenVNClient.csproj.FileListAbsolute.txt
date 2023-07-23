@@ -85,3 +85,4 @@ D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNClient
 D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNClient\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNClient\bin\Debug\net6.0\TruyenVNAPI.dll
 D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNClient\bin\Debug\net6.0\TruyenVNAPI.pdb
+D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNClient\bin\Debug\net6.0\CloudinaryDotNet.dll

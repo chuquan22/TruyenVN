@@ -64,7 +64,7 @@ namespace TruyenVNAPI.Controllers
                 {
                     return BadRequest("Not Find Report");
                 }
-                _mapper.Map(report, reportDTO);
+                _mapper.Map(reportDTO, report);
                 _context.Reports.Update(report);
                 _context.SaveChanges();
 
