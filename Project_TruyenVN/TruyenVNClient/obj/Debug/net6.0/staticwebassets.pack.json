@@ -69,8 +69,28 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNClient\\wwwroot\\img\\1001-cach-chinh-phuc-chong-yeu.jpg",
+      "PackagePath": "staticwebassets\\img\\1001-cach-chinh-phuc-chong-yeu.jpg"
+    },
+    {
+      "Id": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNClient\\wwwroot\\img\\hoang_kim_phap_su.jpg",
+      "PackagePath": "staticwebassets\\img\\hoang_kim_phap_su.jpg"
+    },
+    {
+      "Id": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNClient\\wwwroot\\img\\hoc_vien_sieu_anh_hung.jpg",
+      "PackagePath": "staticwebassets\\img\\hoc_vien_sieu_anh_hung.jpg"
+    },
+    {
+      "Id": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNClient\\wwwroot\\img\\kingdom-vuong-gia-thien-ha.jpg",
+      "PackagePath": "staticwebassets\\img\\kingdom-vuong-gia-thien-ha.jpg"
+    },
+    {
       "Id": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNClient\\wwwroot\\img\\page-misc-error-light.png",
       "PackagePath": "staticwebassets\\img\\page-misc-error-light.png"
+    },
+    {
+      "Id": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNClient\\wwwroot\\img\\tinh-chi-em.jpg",
+      "PackagePath": "staticwebassets\\img\\tinh-chi-em.jpg"
     },
     {
       "Id": "D:\\FULearning\\Summer2023\\PRN231\\Project\\TruyenVN\\Project_TruyenVN\\TruyenVNClient\\wwwroot\\js\\config.js",

@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics.Metrics;
 using System.Net.Http.Headers;
-using TruyenVNAPI.DTO;
 using TruyenVNAPI.Model;
 
-namespace TruyenVNClient.Pages.Admin.Stories
+namespace TruyenVNClient.Pages.Admin.Chapters
 {
     public class IndexModel : PageModel
     {
@@ -16,10 +16,10 @@ namespace TruyenVNClient.Pages.Admin.Stories
             client = new HttpClient();
             var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
-            StoryAPIUrl = "https://localhost:7029/odata/Stories";
+            StoryAPIUrl = "https://localhost:7029/odata/Chapters";
         }
         [BindProperty]
-        public List<Story> ListStories { get; set; }
+        public List<Chapter> ListChapters { get; set; }
         [BindProperty]
         public double count { get; set; }
         [BindProperty]
@@ -27,30 +27,29 @@ namespace TruyenVNClient.Pages.Admin.Stories
         public IActionResult OnGet(int pageNumber)
         {
             currentcount = (pageNumber == 0) ? 1 : pageNumber;
-            GetStory(currentcount);
+            GetChapter(currentcount);
             GetCount();
             return Page();
         }
-        public void GetStory(int count1)
+
+        public void GetChapter(int count1)
         {
-            HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}?$expand=Authors&$skip={(count1 - 1) * 12}").Result;
+            HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}?$expand=Stories&$skip={(count1 - 1) * 10}").Result;
             string strData = responseMessage.Content.ReadAsStringAsync().Result;
 
             dynamic temp = JObject.Parse(strData);
-            ListStories = ((JArray)temp.value).Select(x => new Story
+            ListChapters = ((JArray)temp.value).Select(x => new Chapter
             {
-                story_id = (int)x["story_id"],
-                story_name = (string)x["story_name"],
-                story_image = (string)x["story_image"],
-                description = (string)x["description"],
-                isComic = (bool)x["isComic"],
-                update_at = (DateTime)x["update_at"],
-                create_at = (DateTime)x["create_at"],
-                View = (int)x["View"],
-                Authors = new Author
-                {
-                    author_name = (string)x["Authors"]["author_name"]
-                }
+               chapter_id = (int)x["chapter_id"],
+               chapter_number = (int)x["chapter_number"],
+               title = (string)x["title"],
+               content = (string)x["content"],
+               create_at = (DateTime)x["create_at"],
+               update_at = (DateTime)x["update_at"],
+               Stories = new Story
+               {
+                   story_name = (string)x["story_name"]
+               }
             }).ToList();
         }
         public void GetCount()
@@ -59,13 +58,13 @@ namespace TruyenVNClient.Pages.Admin.Stories
             string strData = responseMessage.Content.ReadAsStringAsync().Result;
 
             double totalNumber = double.Parse(strData);
-            double number = totalNumber / 12.0;
+            double number = totalNumber / 10.0;
             count = Math.Ceiling(number);
         }
 
         public async Task<IActionResult> OnGetDelete(int id)
         {
-            GetStory(1);
+            GetChapter(1);
             GetCount();
             HttpResponseMessage responseMessage = await client.DeleteAsync($"{StoryAPIUrl}({id})");
 

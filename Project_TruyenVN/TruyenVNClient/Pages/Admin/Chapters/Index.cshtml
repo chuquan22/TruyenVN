@@ -1,5 +1,5 @@
 ﻿@page
-@model TruyenVNClient.Pages.Admin.Stories.IndexModel
+@model TruyenVNClient.Pages.Admin.Chapters.IndexModel
 @{
     Layout = "_LayoutAdmin";
 }
@@ -10,29 +10,27 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Story Id</th>
-                <th>Story Name</th>
-                <th>Story Image</th>
-                <th>Author</th>
-                <th>View</th>
+                <th>Chapter Number</th>
+                <th>Chapter Title</th>
+                <th>Story</th>
+                <th>Source</th>
                 <th>Create</th>
                 <th>Update</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody class="table-border-bottom-0">
-            @foreach (var item in Model.ListStories)
+            @foreach (var item in Model.ListChapters)
             {
                 <tr>
-                    <td>@item.story_id</td>
-                    <td>@item.story_name</td>
-                    <td><img height="150" width="150" src="@item.story_image" /></td>
-                    <td>@item.Authors.author_name</td>
-                    <td>@item.View</td>
+                    <td>@item.chapter_number</td>
+                    <td>@item.title</td>
+                    <td>@item.Stories.story_name</td>
+                    <td><a href="@item.content">Source</a></td>
                     <td>@item.create_at</td>
                     <td>@item.update_at</td>
                     <td>
-                        <a class="btn btn-success" href="/Admin/Stories/Edit?id=@item.story_id">Edit</a>
+                        <a class="btn btn-success" href="/Admin/Chapters/Edit?id=@item.story_id">Edit</a>
                         <a class="btn btn-danger" asp-page-handler="Delete" asp-route-id="@item.story_id">Delete</a>
                     </td>
                 </tr>
