@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\FULearning\Summer2023\PRN231\Project\TruyenVN\Project_TruyenVN\TruyenVNClient
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Chapters/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2hhcHRlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/FULearning/Summer2023/PRN231/Project/TruyenVN/Project_TruyenVN/TruyenVNClient/Pages/Admin/Chapters/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2hhcHRlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -102,7 +102,7 @@ namespace TruyenVNClient.Pages
             chapters = ((JArray)temp.value).Select(x => new Chapter
             {
                 chapter_id = (int)x["chapter_id"],
-                chapter_number = (double)x["chapter_number"],
+                chapter_number = (int)x["chapter_number"],
                 title = (string)x["title"],
                 story_id = (int)x["story_id"],
                 create_at = (DateTime)x["create_at"]

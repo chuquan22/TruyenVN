@@ -9,7 +9,7 @@ namespace TruyenVNAPI.Model
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
         public int chapter_id { get; set; }
         [Required]
-        public double chapter_number { get; set; }
+        public int chapter_number { get; set; }
         [ForeignKey("Stories")]
         public int story_id { get; set; }
         [AllowNull]

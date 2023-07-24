@@ -1,0 +1,117 @@
+﻿@page
+@model TruyenVNClient.Pages.Admin.Chapters.CreateModel
+@{
+    Layout = "_LayoutAdmin";
+}
+<div class="row container-xxl flex-grow-1 container-p-y">
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-body">
+                <form method="post">
+                    <p class="text-danger">@ViewData["error"]</p>
+                    <input type="hidden" id="chapter" value="@Model.chapterMax"/>
+                    <input type="hidden" id="story" value="@Model.storyId"/>
+                    <div class="mb-3">
+                        <label class="form-label" for="basic-default-fullname">Chapter Title</label>
+                        <input type="text" id="title" class="form-control" id="basic-default-fullname" placeholder="Naruto" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="basic-default-email">Story Image</label>
+                        <div class="input-group input-group-merge" id="inputGroupFileContainer">
+                            <div class="input-group">
+                                <input type="file" class="form-control" id="inputGroupFile02" onchange="previewImage(this)" required />
+                                <a class="btn btn-primary text-white" id="addNewImg">+ New Img</a>
+                            </div>
+                        </div>
+                        <div class="form-text">You can file img, png</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var imageInputs = [];
+        var maxChapter = 1;
+
+        $('#addNewImg').on('click', function () {
+            var newInput = $('<input>').attr({
+                'type': 'file',
+                'class': 'form-control',
+                'name': 'images', // Đảm bảo có cùng name với input file gốc
+                'required': 'true'
+            }).on('change', function () {
+                previewImage(this);
+            });
+
+            var lineBreak = $('<div>').attr({
+                'class': 'input-group'
+            });
+
+            var removeButton = $('<button>').text('Delete').attr({
+                'class': 'btn btn-danger',
+                'type': 'button'
+            }).on('click', function () {
+                newInput.remove();
+                lineBreak.remove();
+                removeButton.remove();
+                // Cập nhật lại danh sách các input file sau khi xóa
+                imageInputs = imageInputs.filter(function (input) {
+                    return input[0] !== newInput[0];
+                });
+            });
+
+            var inputGroup = $('#inputGroupFileContainer');
+            inputGroup.append(lineBreak);
+            inputGroup.append(newInput);
+            inputGroup.append(removeButton);
+
+            // Thêm input mới vào danh sách các input file
+            imageInputs.push(newInput);
+        });
+
+       
+
+        $('#imageForm').on('submit', function (event) {
+            event.preventDefault();
+
+            // Tạo một FormData để chứa danh sách các hình ảnh
+            
+
+            // Lặp qua danh sách các input file để thêm hình ảnh vào FormData
+            imageInputs.forEach(function (input) {
+                // Kiểm tra xem người dùng đã chọn hình ảnh chưa
+                if (input[0].files.length > 0) {
+                    // Thêm hình ảnh vào FormData
+                    var formData = {
+                        "chapter_number" : $("#chapter").val(),
+                        "title" : $("#title").val(),
+                        "story_id" : $("#story").val(),
+                        "content" : input[0].files[0]
+                    };
+                    $.ajax({
+                        url: 'https://localhost:7029/odata/Chapters', // Thay thế bằng URL của endpoint xử lý yêu cầu POST trên server
+                        type: 'POST',
+                        data: JSON.stringify(formData),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            // Xử lý kết quả trả về từ server (nếu cần)
+                            console.log(result + "success");
+                        },
+                        error: function (error) {
+                            // Xử lý lỗi nếu có
+                            console.error(error + "error");
+                        }
+                    });
+                }
+            });
+
+            // Gửi form lên server bằng AJAX
+
+        });
+    });
+</script>
