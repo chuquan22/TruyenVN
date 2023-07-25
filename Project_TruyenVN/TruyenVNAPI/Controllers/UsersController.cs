@@ -39,11 +39,17 @@ namespace TruyenVNAPI.Controllers
         }
 
         [EnableQuery]
-        public IActionResult Post([FromBody]UserDTO userDTO)
+        public IActionResult Post([FromBody] RegisterDTO registerDTO)
         {
             try
             {
-                var user = _mapper.Map<User>(userDTO);
+                var user = _mapper.Map<User>(registerDTO);
+                user.isActive = true;
+                user.Gender = "";
+                user.CreateAt = DateTime.Now;
+                user.DateOfBirth = "01-01-2001";
+                user.Name = "";
+                user.Role = 0;
                 _context.Users.Add(user);
                 _context.SaveChanges();
 
@@ -56,7 +62,7 @@ namespace TruyenVNAPI.Controllers
 
         }
         [EnableQuery]
-        public IActionResult Put(int key,[FromBody]UserDTO userDTO)
+        public IActionResult Put(int key,[FromBody] UserDTO userDTO)
         {
             try
             {

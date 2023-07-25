@@ -1,54 +1,51 @@
 ﻿@page
-@model TruyenVNClient.Pages.Admin.Chapters.IndexModel
+@model TruyenVNClient.Pages.Admin.Users.IndexModel
 @{
     Layout = "_LayoutAdmin";
 }
 <div class="container-xxl flex-grow-1 container-p-y">
-    <form method="post">
-        <div class="mb-3">
-            <label class="form-label" for="basic-default-phone">Story</label>
-            <select asp-for="Story.story_id" onchange="this.form.submit()" asp-items="ViewBag.story" class="form-select" aria-label="Default select example">
-            </select>
-        </div>
-    </form>
-    <a class="btn btn-info text-white" asp-page="Create" asp-route-storyid="@Model.Story.story_id">+ Create</a>
     <center><p class="text-success">@ViewData["success"]</p></center>
     <center><p class="text-danger">@ViewData["error"]</p></center>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Chapter Number</th>
-                <th>Chapter Title</th>
-                <th>Story</th>
-                <th>Source</th>
-                <th>Create</th>
-                <th>Update</th>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>DateOfBirth</th>
+                <th>Gender</th>
+                <th>CreateAt</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody class="table-border-bottom-0">
-            @foreach (var item in Model.ListChapters)
+            @foreach (var item in Model.Users)
             {
                 <tr>
-                    <td>@item.chapter_number</td>
-                    <td>@item.title</td>
-                    <td>@item.Stories.story_name</td>
-                    <td><img height="100" width="100" src="@item.content" alt="@item.title"></img></td>
-                    <td>@item.create_at</td>
-                    <td>@item.update_at</td>
+                    <td>@item.user_id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.DateOfBirth</td>
+                    <td>@item.Gender</td>
+                    <td>@item.CreateAt</td>
                     <td>
-                        <a class="btn btn-success" href="/Admin/Chapters/Edit?id=@item.chapter_id">Edit</a>
-                        <a class="btn btn-danger" asp-page-handler="Delete" asp-route-id="@item.story_id">Delete</a>
+                        @if (@item.isActive)
+                        {
+                            <a class="btn btn-danger" asp-page-handler="Active" asp-route-id="@item.user_id">Block</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-success" asp-page-handler="Active" asp-route-id="@item.user_id">Active</a>
+                        }
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    @if (Model.count > 1)
-    {
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            @if (Model.count > 1)
+            {
                 <li class="page-item prev">
                     <a class="page-link  @(Model.currentcount == 1 ? "d-none" : "")" href="/Admin/Stories?pageNumber=@Model.currentcount-1">
                         <i class="tf-icon bx bx-chevron-left"></i>
@@ -74,7 +71,7 @@
                         <i class="tf-icon bx bx-chevron-right"></i>
                     </a>
                 </li>
-            </ul>
-        </nav>
-    }
+            }
+        </ul>
+    </nav>
 </div>

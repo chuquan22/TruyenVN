@@ -5,6 +5,10 @@
 
 
 <div class="div_middle" style="background-color: black">
+    @if(ViewData["error"] != null)
+    {
+        <p onload="alert("bạn càn đăng nhập để báo lỗi")"></p>
+    }
     <div class="alert-note-fix"></div>
     <div class="main_content">
 
@@ -39,7 +43,7 @@
                     </div>
                     <div class="chapter-control">
                         <div class="mrt10">
-                            <a rel="nofollow" href="#" class="alertError btn btn-warning"><i class="fa fa-exclamation-triangle"></i> Báo Lỗi Chương</a>
+                            <a rel="nofollow" asp-page-handler="Report" asp-page="ReadComic" asp-route-id="@Model.Chapters.First().chapter_id" class="alertError btn btn-warning"><i class="fa fa-exclamation-triangle"></i> Báo Lỗi Chương</a>
                         </div>
                         <br />
                         @{

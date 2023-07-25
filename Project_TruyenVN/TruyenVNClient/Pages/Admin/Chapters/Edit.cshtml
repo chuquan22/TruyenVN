@@ -1,5 +1,5 @@
 ﻿@page
-@model TruyenVNClient.Pages.Admin.Chapters.CreateModel
+@model TruyenVNClient.Pages.Admin.Chapters.EditModel
 @{
     Layout = "_LayoutAdmin";
 }
@@ -9,8 +9,10 @@
             <div class="card-body">
                 <form method="post" id="imageForm" enctype="multipart/form-data">
                     <p class="text-danger">@ViewData["error"]</p>
-                    <input type="hidden" asp-for="chapter.chapter_number" value="@Model.chapterMax" />
-                    <input type="hidden" asp-for="chapter.story_id" value="@Model.storyId" />
+                    
+                    <input type="hidden" asp-for="chapter.chapter_number" />
+                    <input type="hidden" asp-for="chapter.chapter_id" />
+                    <input type="hidden" asp-for="chapter.story_id" />
                     <div class="mb-3">
                         <label class="form-label" for="basic-default-fullname">Chapter Title</label>
                         <input type="text" asp-for="chapter.title" class="form-control" id="basic-default-fullname" placeholder="Naruto" required />
@@ -20,9 +22,10 @@
                         <div class="input-group input-group-merge" id="inputGroupFileContainer">
                             <div class="input-group">
                                 <input type="file" name="images" class="form-control" id="inputGroupFile02" onchange="previewImage(this)" required />
-                                <a class="btn btn-primary text-white" id="addNewImg">+ New Img</a>
                             </div>
-                            <div id="imagePreview"></div>
+                            <div id="imagePreview">
+                                <img src="@Model.chapter.content"/>
+                            </div>
                         </div>
                         <div class="form-text">You can file img, png</div>
                     </div>
@@ -34,54 +37,6 @@
 </div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
-        var imageInputs = [];
-
-        $('#addNewImg').on('click', function () {
-            var newInput = $('<input>').attr({
-                'type': 'file',
-                'class': 'form-control',
-                'name': 'images', // Đảm bảo có cùng name với input file gốc
-                'required': 'true'
-            }).on('change', function () {
-                previewImage(this);
-            });
-
-            var lineBreak = $('<div>').attr({
-                'class': 'input-group'
-            });
-
-            var preview = $('<div>').attr({
-                'id': 'imagePreview'
-            });
-
-            var removeButton = $('<button>').text('Delete').attr({
-                'class': 'btn btn-danger',
-                'type': 'button'
-            }).on('click', function () {
-                newInput.remove();
-                lineBreak.remove();
-                removeButton.remove();
-                // Cập nhật lại danh sách các input file sau khi xóa
-                imageInputs = imageInputs.filter(function (input) {
-                    return input[0] !== newInput[0];
-                });
-            });
-
-            var inputGroup = $('#inputGroupFileContainer');
-            inputGroup.append(lineBreak);
-            inputGroup.append(newInput);
-            inputGroup.append(removeButton);
-            inputGroup.append(preview);
-
-            // Thêm input mới vào danh sách các input file
-            imageInputs.push(newInput);
-        });
-
-
-        
-    });
-
     function previewImage(fileInput) {
         var previewDiv = document.getElementById("imagePreview");
 
@@ -91,13 +46,16 @@
 
             reader.onload = function (e) {
                 // Hiển thị ảnh được chọn
-                var imagePreview = document.createElement("img");
+                var imagePreview = previewDiv.querySelector("img");
+                if (!imagePreview) {
+                    imagePreview = document.createElement("img");
+                    previewDiv.appendChild(imagePreview);
+                }
+
                 imagePreview.src = e.target.result;
                 imagePreview.alt = "Preview Image";
                 imagePreview.style.width = "200px"; // Điều chỉnh kích thước hiển thị ảnh (tuỳ ý)
                 imagePreview.style.height = "auto";
-                previewDiv.innerHTML = "";
-                previewDiv.appendChild(imagePreview);
             };
 
             // Đọc nội dung của ảnh
@@ -107,7 +65,4 @@
             previewDiv.innerHTML = "";
         }
     }
-
-
-
 </script>

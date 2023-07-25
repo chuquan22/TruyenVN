@@ -109,6 +109,8 @@ namespace TruyenVNClient.Pages.Admin.Chapters
         public async Task<IActionResult> OnPost()
         {
             ViewData["story"] = new SelectList(GetStoryList(), "story_id", "story_name");
+            Story = new Story();
+            Story.story_id = 1;
             HttpResponseMessage responseMessage = client.GetAsync($"{ChapterAPIUrl}?$expand=Stories&$filter=story_id eq {Story.story_id}").Result;
             string strData = responseMessage.Content.ReadAsStringAsync().Result;
 

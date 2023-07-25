@@ -26,13 +26,18 @@ namespace TruyenVNClient.Pages
 
         public IActionResult OnPost(string email, string password)
         {
-            HttpResponseMessage responseMessage = client.GetAsync($"{UserAPIUrl}?$filter=Email eq '{email} and password eq '{password}'").Result;
+            HttpResponseMessage responseMessage = client.GetAsync($"{UserAPIUrl}?$filter=Email eq '{email}' and password eq '{password}'").Result;
             
             string strData = responseMessage.Content.ReadAsStringAsync().Result;
 
             dynamic x = JObject.Parse(strData);
-            int id = (int)x["user_id"];
-            int role = (int)x["Role"];
+            if(x["value"][0]["user_id"] == null)
+            {
+                ViewData["error"] = "Email or password not correct";
+                return Page();
+            }
+            int id = (int)x["value"][0]["user_id"];
+            int role = (int)x["value"][0]["Role"];
 
             if (role == 0)
             {
@@ -43,13 +48,9 @@ namespace TruyenVNClient.Pages
             {
                 HttpContext.Session.SetInt32("id", id);
                 HttpContext.Session.SetString("emailAdmin", email);
-                return RedirectToPage("/Admin");
+                return RedirectToPage("/Admin/Index");
             }
-            else
-            {
-                ViewData["error"] = "Email or password not correct";
-                return Page();
-            }
+            return Page();
         }
     }
 }

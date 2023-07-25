@@ -5,6 +5,7 @@ using System;
 using TruyenVNAPI.Model;
 using Newtonsoft.Json.Linq;
 using TruyenVNAPI.DTO;
+using System.Diagnostics.Metrics;
 
 namespace TruyenVNClient.Pages
 {
@@ -39,12 +40,17 @@ namespace TruyenVNClient.Pages
         [BindProperty]
         public List<StoriesDTO> Top4and5Stories { get; set; }
 
-
-        public async Task<IActionResult> OnGetAsync()
+        [BindProperty]
+        public double count { get; set; }
+        [BindProperty]
+        public int currentcount { get; set; }
+        public async Task<IActionResult> OnGetAsync(int pageNumber)
         {
+            currentcount = (pageNumber == 0) ? 1 : pageNumber;
+            GetCount();
             try
             {
-                HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}?$orderby=update_at desc").Result;
+                HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}?$orderby=update_at desc&$skip={(currentcount - 1) * 12}").Result;
                 string strData = responseMessage.Content.ReadAsStringAsync().Result;
 
                 dynamic temp = JObject.Parse(strData);
@@ -170,6 +176,17 @@ namespace TruyenVNClient.Pages
                 update_at = (DateTime)x["update_at"],
                 chapter_last = GetChapterLast((int)x["story_id"]),
             }).ToList();
+        }
+
+
+        public void GetCount()
+        {
+            HttpResponseMessage responseMessage = client.GetAsync($"{StoryAPIUrl}/$count").Result;
+            string strData = responseMessage.Content.ReadAsStringAsync().Result;
+
+            double totalNumber = double.Parse(strData);
+            double number = totalNumber / 12.0;
+            count = Math.Ceiling(number);
         }
 
     }

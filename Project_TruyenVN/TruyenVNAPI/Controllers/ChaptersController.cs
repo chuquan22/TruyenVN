@@ -41,15 +41,17 @@ namespace TruyenVNAPI.Controllers
         }
 
         [EnableQuery]
-        public IActionResult Post([FromBody] AuthorDTO authorDTO)
+        public IActionResult Post([FromBody] ChapterDTO chapterDTO)
         {
             try
             {
-                var author = _mapper.Map<Author>(authorDTO);
-                _context.Authors.Add(author);
+                var chapter = _mapper.Map<Chapter>(chapterDTO);
+                chapter.create_at= DateTime.Now;
+                chapter.update_at= DateTime.Now;
+                _context.Chapters.Add(chapter);
                 _context.SaveChanges();
 
-                return Created(author);
+                return Created(chapter);
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -59,20 +61,20 @@ namespace TruyenVNAPI.Controllers
         }
 
         [EnableQuery]
-        public IActionResult Put(int key, [FromBody] AuthorDTO authorDTO)
+        public IActionResult Put(int key, [FromBody] ChapterDTO chapterDTO)
         {
             try
             {
-                var author = _context.Authors.Find(key);
-                if (author == null)
+                var chapter = _context.Chapters.Find(key);
+                if (chapter == null)
                 {
                     return BadRequest("Not Find chapter");
                 }
-                _mapper.Map(authorDTO, author);
-                _context.Authors.Update(author);
+                _mapper.Map(chapterDTO, chapter);
+                _context.Chapters.Update(chapter);
                 _context.SaveChanges();
 
-                return Updated(author);
+                return Updated(chapter);
             }
             catch (DbUpdateConcurrencyException ex)
             {

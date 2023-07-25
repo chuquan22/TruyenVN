@@ -124,11 +124,6 @@
                             <a href="https://truyenqqq.vn/truyen-moi-cap-nhat.html"><i class="fa fa-cloud-download" aria-hidden="true"></i> Truyện mới cập nhật</a>
                         </p>
                     </h1>
-                    <div class="sort">
-                        <a href="/Category">
-                            <button> <i class="fa fa-filter" aria-hidden="true"></i></button>
-                        </a>
-                    </div>
                     <div class="clear"></div>
                 </div>
                 <div class="list_grid_out">
@@ -155,16 +150,18 @@
                                         if (days > 0)
                                         {
                                             result += days + " ngày ";
-                                        }else
+                                        }
+                                        else
                                         if (hours > 0)
                                         {
                                             result += hours + " giờ ";
-                                        }else
+                                        }
+                                        else
                                         if (minutes > 0)
                                         {
                                             result += minutes + " phút ";
                                         }
-                                      
+
 
                                         // Loại bỏ khoảng trắng cuối cùng nếu có
                                         result = result.Trim();
@@ -201,14 +198,34 @@
                         </ul>
                     }
 
-                    <div class="clear"></div>
                 </div>
+
             </div>
             <div class="clear"></div>
+            <div class="page_redirect">
+              
+                @for (int i = 1; i <= Model.count; i++)
+                {
+                    if (i == Model.currentcount)
+                    {
+                        <a href="/Index?pageNumber=@i">
+                            <p class="active">@i</p>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/Index?pageNumber=@i">
+                            <p>@i</p>
+                        </a>
+                    }
+                }
+                
+            </div>
         </div>
+
     </div>
     <div class="clear"></div>
-    
+
 </div>
 
 

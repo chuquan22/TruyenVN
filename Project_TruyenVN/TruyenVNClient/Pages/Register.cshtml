@@ -37,18 +37,18 @@
                     <div class="row">
                         <div class="col-md-9 col-lg-8 mx-auto">
                             <h3 class="login-heading mb-4 text-md-center text-info">Register Account!</h3>
-
-                            <form>
+                            <p class="text-danger">@ViewData["error"]</p>
+                            <form method="post">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                    <input type="email" asp-for="User.Email" class="form-control" id="floatingInput" placeholder="name@example.com">
                                     <label for="floatingInput">Email address</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="password" asp-for="User.Password" class="form-control" id="floatingPassword" placeholder="Password">
                                     <label for="floatingPassword">Password</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="password" asp-for="confirmPassword" class="form-control" id="floatingPassword" placeholder="Password">
                                     <label for="floatingPassword">Confirm Password</label>
                                 </div>
 

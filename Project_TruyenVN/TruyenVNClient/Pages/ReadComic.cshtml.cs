@@ -1,6 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http.Headers;
@@ -39,7 +40,7 @@ namespace TruyenVNClient.Pages
                 {
                     chapter_id = (int)x["chapter_id"],
                     chapter_number = (int)x["chapter_number"],
-                    title = (string)x["Title"],
+                    title = (string)x["title"],
                     content = (string)x["content"],
                     create_at = (DateTime)x["create_at"],
                     update_at = (DateTime)x["update_at"],
@@ -58,6 +59,10 @@ namespace TruyenVNClient.Pages
                 }).ToList();
                 story = Chapters.First().Stories;
                 EditViewStory(storyId);
+                if (HttpContext.Session.GetInt32("id") != null)
+                {
+                    AddViewed(Chapters.First().chapter_id);
+                }
                 return Page();
             }
             catch (Exception ex)
@@ -76,6 +81,45 @@ namespace TruyenVNClient.Pages
             HttpResponseMessage response = client.PutAsync($"{StoryAPIUrl}({storyId})", content).Result;
 
             string strData = response.Content.ReadAsStringAsync().Result;
+        }
+
+        public void AddViewed(int chapterId)
+        {
+            var viewed = new Viewed
+            {
+                chapter_id = chapterId,
+                user_id = (int)HttpContext.Session.GetInt32("id"),
+                date_view = DateTime.Now
+            };
+            var json = JsonConvert.SerializeObject(viewed);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = client.PostAsync("https://localhost:7029/odata/Vieweds", content).Result;
+
+            string strData = response.Content.ReadAsStringAsync().Result;
+        }
+
+        public IActionResult OnGetReport(int id)
+        {
+            if(HttpContext.Session.GetInt32("id") == null)
+            {
+                ViewData["error"] = "error";
+                return RedirectToPage("/TruyenTranh?id=3");
+            }
+            var report = new Report
+            {
+                chapter_id = id,
+                user_id = (int)HttpContext.Session.GetInt32("id"),
+                message = "Chương bị lỗi ảnh",
+                send_at= DateTime.Now
+            };
+            var json = JsonConvert.SerializeObject(report);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = client.PostAsync("https://localhost:7029/odata/Reports", content).Result;
+
+            string strData = response.Content.ReadAsStringAsync().Result;
+            return RedirectToPage("/Index");
         }
     }
 }
